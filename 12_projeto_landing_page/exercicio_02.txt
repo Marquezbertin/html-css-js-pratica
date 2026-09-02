@@ -1,0 +1,70 @@
+EXERCÍCIO 02 — Seção de Features (Recursos)
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie a seção "Recursos" da landing page, mostrando 3 ou 6
+características do produto/serviço usando cards estilizados
+com ícones.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Seção de features com:
+- Título "Por que nos escolher?"
+- Subtítulo explicativo
+- Grid responsivo com 6 features
+- Cada feature com ícone (emoji ou unicode), título e descrição
+- Cards com hover effect (elevação)
+- Fundo branco (contraste com hero)
+- Espaçamento uniforme
+
+====================================================
+TAREFAS
+====================================================
+
+1. Adicione a seção de features ao index.html
+2. Use CSS Grid ou Flexbox para o layout dos cards
+3. Cada card com ícone grande, título e parágrafo
+4. Adicione hover com translateY e box-shadow
+5. Use cores da paleta para ícones e destaques
+
+====================================================
+DICA
+====================================================
+
+Grid responsivo de features:
+  .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+  }
+
+Card de feature:
+  .feature-card {
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  .feature-icon {
+      font-size: 48px;
+      margin-bottom: 15px;
+  }
+
+Ícones Unicode:
+  🚀 Velocidade
+  🎨 Design
+  📱 Responsivo
+  🔒 Segurança
+  ⚡ Performance
+  🌍 SEO

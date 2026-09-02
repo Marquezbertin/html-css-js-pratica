@@ -1,0 +1,67 @@
+EXERCÍCIO 03 — Alternar Classes CSS com JavaScript
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma galeria de imagens onde o usuário pode alternar entre
+diferentes visões (grid, lista, compacta) usando botões que
+adicionam/removem classes CSS.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma galeria com:
+- Botões de visualização: Grid, Lista, Compacta
+- 6 cards de imagem que mudam de layout
+- Grid: cards em 3 colunas
+- Lista: cards em linha (1 coluna)
+- Compacta: cards menores em 4 colunas
+- Efeito de transição suave ao mudar layout
+- Botão ativo destacado
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "galeria_dom.html" com estrutura HTML5 completa
+2. Crie 3 classes CSS: .grid, .lista, .compacta
+3. Use classList.add e classList.remove para trocar layout
+4. Use classList.contains para verificar layout atual
+5. Adicione transições CSS para mudança suave
+
+====================================================
+DICA
+====================================================
+
+Trocar classes:
+  function setLayout(layout) {
+      let galeria = document.getElementById("galeria");
+      galeria.classList.remove("grid", "lista", "compacta");
+      galeria.classList.add(layout);
+
+      // Atualizar botão ativo
+      document.querySelectorAll(".btn-layout").forEach(btn => {
+          btn.classList.remove("ativo");
+      });
+      event.target.classList.add("ativo");
+  }
+
+CSS para cada layout:
+  .galeria.grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+  }
+  .galeria.lista {
+      display: flex;
+      flex-direction: column;
+  }
+  .galeria.compacta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+  }
+
+Adicione transição:
+  .galeria { transition: all 0.3s ease; }

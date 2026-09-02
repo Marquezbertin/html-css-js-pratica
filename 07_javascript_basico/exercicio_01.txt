@@ -1,0 +1,52 @@
+EXERCÍCIO 01 — Variáveis e Operadores
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um programa JavaScript que funcione como uma "ficha de
+personagem" de RPG. Declare variáveis com dados do personagem
+e use operadores para calcular atributos.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página que exibe:
+- Nome do personagem (string)
+- Nível (número)
+- Pontos de vida base e bônus (cálculo com operadores)
+- Se o personagem é "forte" ou "fraco" (comparação)
+- Uma frase descrevendo o personagem (concatenação)
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "personagem.html" com estrutura HTML5
+2. Declare variáveis com let para nome, classe, nivel, vidaBase, bonus
+3. Calcule vidaTotal = vidaBase + bonus * nivel
+4. Use operador ternário para definir se é "forte" ou "fraco"
+5. Exiba tudo no console.log() e na página
+
+====================================================
+DICA
+====================================================
+
+Declare as variáveis:
+  let nome = "Gandalf";
+  let classe = "Mago";
+  let nivel = 10;
+  let vidaBase = 50;
+  let bonus = 5;
+
+Calcule com operadores:
+  let vidaTotal = vidaBase + bonus * nivel; // 100
+  let ehForte = nivel >= 8; // true
+
+Use ternário:
+  let forca = ehForte ? "Forte" : "Fraco";
+
+Para exibir na página:
+  document.write("<p>Vida: " + vidaTotal + "</p>");

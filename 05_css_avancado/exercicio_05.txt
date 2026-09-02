@@ -1,0 +1,58 @@
+EXERCÍCIO 05 — Página com Efeitos Combinados
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma página promocional de produto (ex: headphones) com todos
+os efeitos CSS avançados combinados: gradientes, animações,
+transições, sombras e transforms.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página de produto premium com:
+- Header com gradiente e navbar com transição
+- Hero com imagem animada (flutuando) e título neon
+- Cards de features com hover elevação e ícones animados
+- Seção de depoimentos com cards e bordas gradiente
+- Botão CTA com gradiente pulsante
+- Footer com gradiente escuro
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "promocao.html" com estrutura HTML5 completa
+2. Use gradientes no fundo de pelo menos 3 seções
+3. Adicione animação flutuante na imagem principal
+4. Crie cards com hover elevation (translateY + box-shadow)
+5. Adicione um botão com gradiente animado (background-size + animation)
+
+====================================================
+DICA
+====================================================
+
+Para gradiente animado no botão:
+  .btn-cta {
+      background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #ff6b6b);
+      background-size: 300% 100%;
+      animation: gradient-shift 3s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+  }
+
+Para borda gradiente em cards:
+  .card {
+      background: white;
+      border: 2px solid transparent;
+      border-image: linear-gradient(135deg, #667eea, #764ba2) 1;
+  }
+
+Combine todos os conceitos dos exercícios anteriores!

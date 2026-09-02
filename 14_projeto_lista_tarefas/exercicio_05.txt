@@ -1,0 +1,73 @@
+EXERCÍCIO 05 — Filtros e Contadores
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Implemente filtros para visualizar diferentes tipos de tarefas
+e contadores atualizados em tempo real.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Funcionalidades:
+- Botão "Todos" mostra todas as tarefas
+- Botão "Ativos" mostra só as não concluídas
+- Botão "Concluídos" mostra só as completas
+- Botão ativo tem destaque visual
+- Contador mostra "X tarefas ativas"
+- Botão "Limpar concluídas" remove todas as completas
+- Total de tarefas exibido
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie variável filtroAtual com valor "todos"
+2. Implemente função filtrar(filtro)
+3. Modifique renderizar() para considerar o filtro
+4. Adicione eventos de clique nos botões de filtro
+5. Implemente limparConcluidas()
+
+====================================================
+DICA
+====================================================
+
+Variável de filtro:
+  let filtroAtual = "todos";
+
+Filtrar:
+  function filtrar(filtro) {
+      filtroAtual = filtro;
+      document.querySelectorAll(".filtro").forEach(btn => {
+          btn.classList.remove("ativo");
+      });
+      event.target.classList.add("ativo");
+      renderizar();
+  }
+
+Renderizar com filtro:
+  function renderizar() {
+      let tarefasFiltradas = tarefas;
+      if (filtroAtual === "ativos") {
+          tarefasFiltradas = tarefas.filter(t => !t.concluida);
+      } else if (filtroAtual === "concluidos") {
+          tarefasFiltradas = tarefas.filter(t => t.concluida);
+      }
+
+      let html = "";
+      for (let t of tarefasFiltradas) {
+          // ...código existente de renderização...
+      }
+      document.getElementById("lista").innerHTML = html;
+      atualizarContador();
+  }
+
+Limpar concluídas:
+  function limparConcluidas() {
+      tarefas = tarefas.filter(t => !t.concluida);
+      salvarLocalStorage();
+      renderizar();
+  }

@@ -1,0 +1,64 @@
+EXERCÍCIO 04 — Gradientes e Textos Neon
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma página escurecida com efeitos visuais impressionantes:
+gradientes de fundo, textos com efeito neon e cards com gradientes
+coloridos.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com fundo escuro contendo:
+- Título com efeito de texto neon brilhante
+- 3 cards com gradiente de fundo colorido
+- Botão com gradiente animado
+- Imagem/decoração com gradiente linear
+- Efeito de brilho pulsante no título
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "gradientes_neon.html" com estrutura HTML5
+2. Adicione gradiente no fundo da página
+3. Crie efeito neon no título com text-shadow
+4. Estilize 3 cards com gradientes diferentes
+5. Crie um botão com gradiente e hover animado
+
+====================================================
+DICA
+====================================================
+
+Gradiente no fundo:
+  body {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  }
+
+Texto neon:
+  .neon {
+      color: #00f;
+      text-shadow:
+          0 0 5px #00f,
+          0 0 10px #00f,
+          0 0 20px #00f,
+          0 0 40px #00f;
+  }
+
+Card com gradiente:
+  .card-grad {
+      background: linear-gradient(135deg, #ff6b6b, #feca57);
+      border-radius: 15px;
+      padding: 20px;
+      color: white;
+  }
+
+Para neon pulsante, use @keyframes:
+  @keyframes neon-pulse {
+      0%, 100% { text-shadow: 0 0 5px #00f, 0 0 10px #00f; }
+      50% { text-shadow: 0 0 10px #00f, 0 0 30px #00f, 0 0 50px #00f; }
+  }

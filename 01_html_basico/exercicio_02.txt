@@ -1,0 +1,42 @@
+EXERCÍCIO 02 — Títulos e Parágrafos
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Você quer criar um artigo/blog sobre seu jogo favorito. O artigo precisa
+ter uma hierarquia clara de títulos e vários parágrafos explicando
+sobre o jogo.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Um título principal (h1) com o nome do jogo
+- Um subtítulo (h2) "Sobre o Jogo"
+- Um parágrafo explicando do que se trata o jogo
+- Outro subtítulo (h2) "Como Jogar"
+- Dois parágrafos explicando as regras
+- Um subtítulo (h3) "Dicas Pro"
+- Um parágrafo com dicas avançadas
+- Uma frase em negrito e outra em itálico
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie o arquivo "artigo.html" com a estrutura HTML5 completa
+2. Adicione o título principal com <h1> e o nome do jogo
+3. Crie dois subtítulos com <h2>: "Sobre o Jogo" e "Como Jogar"
+4. Adicione parágrafos com <p> descrevendo o jogo e suas regras
+5. Crie um <h3> "Dicas Pro" com um parágrafo de dicas avançadas
+
+====================================================
+DICA
+====================================================
+
+Use <strong> para texto em negrito e <em> para itálico.
+Exemplo: <p>O item mais raro é o <strong>Dragão Dourado</strong>.</p>
+Lembre-se: h1 deve ser usado apenas UMA vez por página.

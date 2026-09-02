@@ -1,0 +1,64 @@
+EXERCÍCIO 06 — Cardápio Completo
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um cardápio completo para uma lanchonete fictícia, combinando
+tudo que aprendeu: títulos, listas e tabelas. O cardápio deve ter
+seções de lanches, bebidas, sobremesas e uma tabela comparativa
+de combos.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Título "Burger House — Cardápio"
+- Seção "Lanches" com lista de 5 opções e preços
+- Seção "Bebidas" com lista de 4 opções e preços
+- Seção "Sobremesas" com lista de 3 opções e preços
+- Seção "Combos" com tabela comparativa (Individual, Duplo, Família)
+- Tabela mostrando o que inclui cada combo e o preço
+- Rodapé com horário de funcionamento
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie o arquivo "cardapio.html" com estrutura HTML5 completa
+2. Use listas (<ul>) para cada seção do cardápio com preços
+3. Use uma tabela (<table>) para comparar os 3 combos
+4. A tabela deve ter colunas: Item, Combo Individual, Duplo, Família
+5. Adicione um rodapé com informações de funcionamento
+
+====================================================
+DICA
+====================================================
+
+Combine os dois conceitos:
+  <ul>
+      <li><strong>X-Burger</strong> — R$ 15,00</li>
+      <li><strong>X-Bacon</strong> — R$ 18,00</li>
+  </ul>
+
+Para a tabela de combos:
+  <table>
+      <thead>
+          <tr>
+              <th>Item</th>
+              <th>Individual (R$25)</th>
+              <th>Duplo (R$40)</th>
+              <th>Família (R$70)</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Hambúrguer</td>
+              <td>1</td>
+              <td>2</td>
+              <td>4</td>
+          </tr>
+      </tbody>
+  </table>

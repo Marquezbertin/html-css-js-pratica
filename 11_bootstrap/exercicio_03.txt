@@ -1,0 +1,61 @@
+EXERCÍCIO 03 — Cards e Botões
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma vitrine de produtos usando cards Bootstrap com
+diferentes variações de botões, badges e estados visuais.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Título "Loja de Games"
+- Grid responsivo com 6 cards de jogos
+- Cada card com imagem, título, descrição, preço e botão
+- Botões com diferentes cores (primary, success, danger)
+- Badges de desconto e "Novo"
+- Cards com hover effect
+- Seção de promoção com card grande
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "loja.html" com Bootstrap via CDN
+2. Use row e col-md-4 para o grid de cards
+3. Estilize cards com card-body, card-title, card-text
+4. Adicione badges (bg-danger para desconto)
+5. Use diferentes botões: btn-primary, btn-success, btn-outline
+
+====================================================
+DICA
+====================================================
+
+Card Bootstrap:
+  <div class="card h-100">
+      <img src="https://picsum.photos/300/200" class="card-img-top">
+      <div class="card-body">
+          <h5 class="card-title">Nome do Jogo</h5>
+          <p class="card-text">Descrição do jogo.</p>
+          <span class="badge bg-danger">-30%</span>
+          <p class="card-text mt-2"><strong>R$ 139,00</strong></p>
+          <a href="#" class="btn btn-primary">Comprar</a>
+      </div>
+  </div>
+
+Card grande (promoção):
+  <div class="card text-white bg-primary">
+      <div class="card-body">
+          <h3>Oferta Especial</h3>
+          <p>Só até sexta-feira!</p>
+      </div>
+  </div>
+
+Classes úteis:
+  h-100 : faz o card ter mesma altura
+  mb-3 : margem inferior
+  mt-2 : margem superior

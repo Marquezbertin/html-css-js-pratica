@@ -1,0 +1,73 @@
+EXERCÍCIO 06 — Loading Screen Animada
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma tela de loading (carregamento) completa e animada,
+estilo as que aparecem quando um app está abrindo. Use apenas
+HTML e CSS, sem JavaScript.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma tela de loading com:
+- Fundo escuro gradiente
+- Logo ou ícone girando no centro
+- Texto "Carregando..." com animação de pontos
+- Barra de progresso animada
+- Spinner circular ao redor do logo
+- Animação de fade-in para o conteúdo principal quando "carrega"
+- Tudo sincronizado e profissional
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "loading.html" com estrutura HTML5
+2. Crie um spinner circular com border e animation
+3. Adicione texto com animação de pontos (...)
+4. Crie uma barra de progresso animada com @keyframes
+5. Adicione um efeito fade-in final com animation-delay
+
+====================================================
+DICA
+====================================================
+
+Spinner circular:
+  .spinner {
+      width: 60px;
+      height: 60px;
+      border: 5px solid rgba(255,255,255,0.2);
+      border-top: 5px solid #667eea;
+      border-radius: 50%;
+      animation: girar 1s linear infinite;
+  }
+
+Barra de progresso:
+  .barra {
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      animation: progresso 2s ease-in-out forwards;
+  }
+
+  @keyframes progresso {
+      to { width: 100%; }
+  }
+
+Texto com pontos animados:
+  <p class="loading-text">Carregando<span class="dots"></span></p>
+
+Use animation-delay para sincronizar elementos.
+O conteúdo principal pode aparecer com:
+  @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+  }
+  .conteudo {
+      animation: fadeIn 0.5s ease 2.5s forwards; /* Espera 2.5s */
+      opacity: 0;
+  }

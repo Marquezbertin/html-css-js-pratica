@@ -1,0 +1,68 @@
+EXERCÍCIO 02 — Promises e Fetch Básico
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma página que busca dados de uma API pública e exibe
+na tela. Use fetch para obter lista de posts e permita
+filtrar por título.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Título "Blog dos Posts"
+- Lista de 10 posts carregados da API
+- Cada post com título, corpo e ID do autor
+- Barra de busca que filtra posts pelo título
+- Loading durante o carregamento
+- Mensagem de erro se falhar
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "posts.html" com estrutura HTML5 completa
+2. Use fetch para buscar https://jsonplaceholder.typicode.com/posts?_limit=10
+3. Converta a resposta com response.json()
+4. Exiba os posts em cards na página
+5. Implemente filtro por título com input
+
+====================================================
+DICA
+====================================================
+
+Fetch básico:
+  fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
+      .then(response => response.json())
+      .then(posts => {
+          exibirPosts(posts);
+      })
+      .catch(erro => {
+          document.getElementById("erro").innerText = "Erro ao carregar";
+      });
+
+Exibir posts:
+  function exibirPosts(posts) {
+      let html = "";
+      for (let post of posts) {
+          html += '<div class="post">';
+          html += '<h3>' + post.title + '</h3>';
+          html += '<p>' + post.body + '</p>';
+          html += '<small>Autor #' + post.userId + '</small>';
+          html += '</div>';
+      }
+      document.getElementById("posts").innerHTML = html;
+  }
+
+Filtro:
+  input.addEventListener("input", function() {
+      let termo = this.value.toLowerCase();
+      let filtrados = posts.filter(p =>
+          p.title.toLowerCase().includes(termo)
+      );
+      exibirPosts(filtrados);
+  });

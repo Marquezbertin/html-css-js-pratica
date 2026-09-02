@@ -1,0 +1,52 @@
+EXERCÍCIO 01 — Cores e Fontes
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Você quer criar uma página colorida e divertida que mostre como
+funcionam as cores e fontes em CSS. A página deve ter diferentes
+cores, tamanhos de texto e estilos de fonte.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com fundo colorido contendo:
+- Título principal em vermelho, grande e centralizado
+- 3 parágrafos com cores diferentes (azul, verde, roxo)
+- 1 parágrafo em itálico e negrito
+- 1 parágrafo sublinhado
+- 1 parágrafo com fonte monoespaçada (código)
+- Texto centralizado e alinhado à esquerda
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "cores_fontes.html" com estrutura HTML5
+2. Adicione uma tag <style> no <head> para o CSS
+3. Mude a cor de fundo da página com background-color
+4. Crie 3 classes CSS (.vermelho, .azul, .verde) com cores diferentes
+5. Aplique as classes nos parágrafos correspondentes
+
+====================================================
+DICA
+====================================================
+
+Exemplo de classe no CSS:
+  <style>
+      .vermelho { color: red; }
+      .azul { color: blue; }
+      .verde { color: green; }
+  </style>
+
+Use no HTML:
+  <p class="vermelho">Este texto é vermelho.</p>
+
+Cores.Hexdump:
+  Vermelho: #FF0000
+  Azul: #0000FF
+  Verde: #00FF00
+  Roxo: #800080

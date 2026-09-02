@@ -1,0 +1,88 @@
+EXERCÍCIO 05 — Formulário de Contato
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie a seção de contato do portfólio com formulário estilizado
+e links para redes sociais.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Seção de contato com:
+- Título "Vamos Conversar"
+- Formulário: nome, e-mail, assunto, mensagem
+- Botão de enviar estilizado
+- Links para redes sociais (GitHub, LinkedIn, Instagram)
+- Mapa/endereço fictício
+- Mensagem de sucesso ao enviar (JavaScript)
+
+====================================================
+TAREFAS
+====================================================
+
+1. Adicione seção "Contato" ao index.html
+2. Crie formulário estilizado com tema escuro
+3. Adicione validação com JavaScript
+4. Mostre mensagem de sucesso ao enviar
+5. Adicione links de redes sociais
+
+====================================================
+DICA
+====================================================
+
+Formulário tema escuro:
+  .contato-form input,
+  .contato-form textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--darker);
+      border: 1px solid var(--gray);
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      margin-bottom: 15px;
+  }
+  .contato-form input:focus,
+  .contato-form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+  }
+
+Mensagem de sucesso:
+  document.getElementById("formContato").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("sucesso").style.display = "block";
+      this.reset();
+      setTimeout(() => {
+          document.getElementById("sucesso").style.display = "none";
+      }, 3000);
+  });
+
+Redes sociais:
+  .redes-sociais {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+  }
+  .redes-sociais a {
+      width: 50px;
+      height: 50px;
+      border: 2px solid var(--gray);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      transition: all 0.3s;
+  }
+  .redes-sociais a:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+  }

@@ -1,0 +1,58 @@
+EXERCÍCIO 01 — Formulário de Login
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um formulário de login estilizado, parecido com os que você
+vê em sites reais. Deve ter campos de e-mail e senha, link de
+"esqueci minha senha" e botão de entrar.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um formulário centralizado com:
+- Logo ou título no topo
+- Campo de e-mail com ícone/placeholder
+- Campo de senha
+- Checkbox "Lembrar de mim"
+- Link "Esqueci minha senha"
+- Botão "Entrar" grande e azul
+- Link "Criar conta" embaixo
+- Design limpo e profissional
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "login.html" com estrutura HTML5
+2. Use o elemento <form> com campos de e-mail e senha
+3. Adicione label para acessibilidade em cada campo
+4. Use type="email" e type="password" nos inputs
+5. Estilize com CSS inline ou <style> para ficar profissional
+
+====================================================
+DICA
+====================================================
+
+Estrutura do formulário:
+  <form>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" required
+             placeholder="seu@email.com">
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" required minlength="6">
+
+      <label>
+          <input type="checkbox"> Lembrar de mim
+      </label>
+
+      <button type="submit">Entrar</button>
+
+      <p>Não tem conta? <a href="#">Criar conta</a></p>
+  </form>
+
+Use type="email" para validação automática de e-mail.

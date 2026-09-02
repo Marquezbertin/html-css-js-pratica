@@ -1,0 +1,93 @@
+EXERCÍCIO 04 — Timeline de Experiência
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma timeline visual mostrando sua trajetória acadêmica
+e profissional, com eventos ao longo de uma linha vertical.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma timeline com:
+- Linha vertical centralizada
+- Eventos alternando à esquerda e direita
+- Cada evento com: ano, título, instituição/empresa, descrição
+- Bolinha colorida na linha para cada evento
+- Animação de entrada ao scroll
+- Responsivo (todos à esquerda em mobile)
+
+====================================================
+TAREFAS
+====================================================
+
+1. Adicione seção "Experiência" ao index.html
+2. Crie 5 eventos de timeline (estudos e projetos)
+3. Use pseudo-elementos CSS para a linha e bolinhas
+4. Alterne eventos à esquerda e direita com nth-child
+5. Adicione animação de slide-in ao scroll
+
+====================================================
+DICA
+====================================================
+
+Linha central:
+  .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 0;
+  }
+  .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: var(--primary);
+  }
+
+Evento:
+  .evento {
+      position: relative;
+      width: 45%;
+      padding: 20px;
+      background: var(--dark);
+      border-radius: 12px;
+      margin-bottom: 30px;
+  }
+  .evento:nth-child(odd) {
+      margin-left: 5%;
+  }
+  .evento:nth-child(even) {
+      margin-left: 50%;
+  }
+
+Bolinha:
+  .evento::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid var(--primary);
+  }
+  .evento:nth-child(odd)::before {
+      right: -32px;
+  }
+  .evento:nth-child(even)::before {
+      left: -32px;
+  }
+
+Mobile (tudo à esquerda):
+  @media (max-width: 768px) {
+      .timeline::before { left: 20px; }
+      .evento { width: 80%; margin-left: 50px; }
+      .evento::before { left: -36px !important; }
+  }

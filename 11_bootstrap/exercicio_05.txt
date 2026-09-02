@@ -1,0 +1,73 @@
+EXERCÍCIO 05 — Página Completa com Bootstrap
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma landing page profissional completa usando Bootstrap,
+com navbar, hero, features, testimonials, pricing e footer.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma landing page com:
+- Navbar responsiva com logo e links
+- Hero section com título, subtítulo e botão CTA
+- Seção "Recursos" com 3 cards em grid
+- Seção "Como Funciona" com 4 passos
+- Seção "Preços" com 3 planos (cards)
+- Seção "FAQ" com accordion
+- Footer com 3 colunas de links
+- Tudo 100% responsivo
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "landing.html" com Bootstrap via CDN
+2. Use container, row, col para organizar cada seção
+3. Use cards para features e preços
+4. Use accordion para FAQ
+5. Use text-center, py-5, my-5 para espaçamento
+
+====================================================
+DICA
+====================================================
+
+Accordion Bootstrap:
+  <div class="accordion" id="faq">
+      <div class="accordion-item">
+          <h2 class="accordion-header">
+              <button class="accordion-button" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#pergunta1">
+                  Como funciona?
+              </button>
+          </h2>
+          <div id="pergunta1" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                  Resposta da pergunta...
+              </div>
+          </div>
+      </div>
+  </div>
+
+Cards de preço:
+  <div class="row g-4">
+      <div class="col-md-4">
+          <div class="card text-center">
+              <div class="card-header bg-primary text-white">
+                  <h4>Plano Básico</h4>
+                  <h2>R$29/mês</h2>
+              </div>
+              <div class="card-body">
+                  <ul class="list-unstyled">
+                      <li>✓ 5 projetos</li>
+                      <li>✓ Suporte email</li>
+                  </ul>
+                  <button class="btn btn-outline-primary">Escolher</button>
+              </div>
+          </div>
+      </div>
+  </div>

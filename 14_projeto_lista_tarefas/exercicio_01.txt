@@ -1,0 +1,80 @@
+EXERCÍCIO 01 — Estrutura HTML + CSS do Todo App
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie a estrutura visual completa do aplicativo de tarefas
+antes de adicionar qualquer funcionalidade JavaScript.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um layout com:
+- Header com título "Minhas Tarefas" e data atual
+- Barra de entrada: input + botão "Adicionar"
+- Barra de filtros: Todos, Ativos, Concluídos
+- Lista de tarefas (3-4 itens fictícios no HTML)
+- Cada tarefa com checkbox, texto e botão remover
+- Footer com contador "X tarefas ativas"
+- Tema escuro moderno
+- Design responsivo
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "index.html" e "styles.css"
+2. Monte toda a estrutura HTML com tarefas estáticas
+3. Estilize com CSS (tema escuro, bordas arredondadas)
+4. Adicione hover effects nos botões e itens
+5. Use Flexbox para layout dos itens
+
+====================================================
+DICA
+====================================================
+
+Estrutura HTML do app:
+  <div class="app">
+      <header>
+          <h1>Minhas Tarefas</h1>
+          <p class="data">15 de Janeiro, 2024</p>
+      </header>
+
+      <div class="entrada">
+          <input type="text" placeholder="Nova tarefa...">
+          <button>+</button>
+      </div>
+
+      <div class="filtros">
+          <button class="ativo">Todos</button>
+          <button>Ativos</button>
+          <button>Concluídos</button>
+      </div>
+
+      <ul class="lista-tarefas">
+          <li class="tarefa">
+              <input type="checkbox">
+              <span>Estudar HTML</span>
+              <button class="remover">×</button>
+          </li>
+      </ul>
+
+      <footer>
+          <span>X tarefas ativas</span>
+      </footer>
+  </div>
+
+Estilo da tarefa:
+  .tarefa {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #333;
+      transition: background 0.2s;
+  }
+  .tarefa:hover {
+      background: #2a2a3e;
+  }

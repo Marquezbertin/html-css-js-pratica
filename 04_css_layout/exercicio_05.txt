@@ -1,0 +1,59 @@
+EXERCÍCIO 05 — Layout Completo Responsivo
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma landing page completa e responsiva com header, hero
+section, cards de features, seção de preço e rodapé. Tudo deve
+funcionar perfeitamente em qualquer tamanho de tela.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma landing page profissional com:
+- Navbar responsiva (links escondem no celular)
+- Hero section com título grande e botão CTA
+- Grid de 3 features que se adapta
+- Tabela de preços com 3 planos
+- Rodapé com links organizados em colunas
+- Tudo funciona em 320px até 1920px+
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "landing_responsiva.html" com estrutura HTML5
+2. Use Flexbox para a navbar e hero section
+3. Use Grid para os cards de features e tabela de preços
+4. Adicione media queries para 3 breakpoints (mobile, tablet, desktop)
+5. Teste redimensionando o navegador para garantir responsividade
+
+====================================================
+DICA
+====================================================
+
+Estrutura recomendada:
+  <nav> ........... Flexbox (logo esquerda, links direita)
+  <section class="hero"> ... Flexbox column (centralizado)
+  <section class="features"> ... Grid (3 colunas → 1 coluna)
+  <section class="pricing"> ... Grid (3 colunas → 1 coluna)
+  <footer> ........ Flexbox (colunas de links)
+
+Dica para a tabela de preços responsiva:
+  .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+  }
+
+Para a navbar no celular, use um display diferente:
+  @media (max-width: 767px) {
+      .nav-links {
+          display: none; /* Ou mude para column */
+      }
+  }
+
+Invista tempo neste exercício — é o mais completo do módulo!

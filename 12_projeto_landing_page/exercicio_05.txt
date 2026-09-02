@@ -1,0 +1,75 @@
+EXERCÍCIO 05 — FAQ + CTA Final + Footer
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Complete a landing page com as 3 seções finais: FAQ (perguntas
+frequentes), CTA Final (chamada para ação) e Footer (rodapé).
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Seção FAQ:
+- Título "Perguntas Frequentes"
+- 5 perguntas com resposta expandível
+- Efeito de accordion (abrir/fechar)
+- Animação suave
+
+CTA Final:
+- Fundo gradiente colorido
+- Título motivacional
+- Subtítulo
+- Botão grande e branco
+- Efeito de parallax ou destaque visual
+
+Footer:
+- 4 colunas: Sobre, Links, Contato, Redes Sociais
+- Ícones de redes sociais
+- Copyright
+- Fundo escuro
+
+====================================================
+TAREFAS
+====================================================
+
+1. Adicione seção FAQ ao index.html com accordion
+2. Adicione CTA Final com gradiente e botão
+3. Adicione Footer com 4 colunas
+4. Implemente accordion com JavaScript vanilla
+5. Estilize todas as seções com a paleta de cores
+
+====================================================
+DICA
+====================================================
+
+Accordion simples:
+  <div class="faq-item">
+      <div class="faq-pergunta" onclick="toggleFaq(this)">
+          <span>Pergunta?</span>
+          <span>+</span>
+      </div>
+      <div class="faq-resposta">
+          <p>Resposta aqui...</p>
+      </div>
+  </div>
+
+JavaScript do accordion:
+  function toggleFaq(elemento) {
+      let resposta = elemento.nextElementSibling;
+      resposta.classList.toggle("aberta");
+      let icone = elemento.querySelector("span:last-child");
+      icone.textContent = resposta.classList.contains("aberta") ? "−" : "+";
+  }
+
+Footer em colunas:
+  footer {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      background: var(--dark);
+      color: white;
+      padding: 40px 20px;
+  }

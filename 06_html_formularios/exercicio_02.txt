@@ -1,0 +1,59 @@
+EXERCÍCIO 02 — Formulário de Cadastro
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um formulário de cadastro completo para um app de delivery
+de comida. O formulário deve coletar dados pessoais, endereço
+e preferências alimentares.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um formulário com múltiplas seções:
+- Dados pessoais: nome, e-mail, telefone, data de nascimento
+- Endereço: rua, número, bairro, cidade, estado (select)
+- Preferências: tipo de comida favorita (checkbox)
+- Restrições: intolerâncias alimentares (outros checkboxes)
+- Campo de observações (textarea)
+- Botão "Cadastrar"
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "cadastro.html" com estrutura HTML5
+2. Use fieldset e legend para separar as seções
+3. Use type="tel" para telefone e type="date" para nascimento
+4. Crie um select com pelo menos 5 estados brasileiros
+5. Use checkboxes para preferências e radio buttons para gênero
+
+====================================================
+DICA
+====================================================
+
+Fieldset organiza campos em grupo:
+  <fieldset>
+      <legend>Dados Pessoais</legend>
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" required>
+
+      <label for="tel">Telefone</label>
+      <input type="tel" id="tel" placeholder="(11) 99999-9999">
+  </fieldset>
+
+Radio buttons (seleção única) — mesmos name:
+  <input type="radio" name="genero" value="feminino" id="fem">
+  <label for="fem">Feminino</label>
+
+  <input type="radio" name="genero" value="masculino" id="masc">
+  <label for="masc">Masculino</label>
+
+Select para estados:
+  <select name="estado">
+      <option value="SP">São Paulo</option>
+      <option value="RJ">Rio de Janeiro</option>
+  </select>

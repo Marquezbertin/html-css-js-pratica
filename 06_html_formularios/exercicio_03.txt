@@ -1,0 +1,56 @@
+EXERCÍCIO 03 — Formulário com Validação
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um formulário de criação de perfil para um jogo online,
+com validação em todos os campos usando apenas HTML (sem JavaScript).
+O formulário deve impedir o envio se os dados estiverem incorretos.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um formulário com:
+- Nome de usuário: obrigatório, mínimo 3 caracteres
+- E-mail: obrigatório, formato válido
+- Senha: obrigatória, mínimo 8 caracteres
+- Confirmar senha: obrigatória, mesma senha
+- Idade: número entre 13 e 120
+- Cor favorita: seletor de cores (input color)
+- Termos de uso: checkbox obrigatório
+- Botão só envia se tudo estiver válido
+- Mensagens de erro aparecem automaticamente
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "validacao.html" com estrutura HTML5
+2. Use required em todos os campos obrigatórios
+3. Use minlength para nome e senha
+4. Use min e max para idade
+5. Use pattern para validação de formato de senha
+
+====================================================
+DICA
+====================================================
+
+Validações HTML5:
+  <input type="text" required minlength="3">
+  <input type="email" required>
+  <input type="password" required minlength="8">
+  <input type="number" min="13" max="120" required>
+  <input type="color">
+  <input type="checkbox" required>
+
+Para confirmar senha, use o atributo pattern:
+  <input type="password" id="confirmar" required
+         pattern=".{8,}" title="Mínimo 8 caracteres">
+
+Paraular confirmação de senha exata, usaremos JavaScript
+no módulo 07. Por enquanto, use pattern com regex simples.
+
+O browser mostra mensagens de erro automaticamente!

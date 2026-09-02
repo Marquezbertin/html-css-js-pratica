@@ -1,0 +1,68 @@
+EXERCÍCIO 05 — Previsão do Tempo
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um aplicativo de previsão do tempo que busca dados de uma
+API de clima e exibe as informações de forma visual e clara.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um app de clima com:
+- Campo de busca por cidade
+- Temperatura atual em destaque
+- Ícone do clima (sol, nuvens, chuva)
+- Sensação térmica, umidade, vento
+- Previsão para os próximos dias
+- Fundo muda conforme o clima
+- Histórico de buscas recentes
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "clima.html" com estrutura HTML5 completa
+2. Use a API Open-Meteo (gratuita, sem chave): https://api.open-meteo.com/v1/forecast
+3. Primeiro busque o código da cidade com geocoding
+4. Exiba temperatura, umidade, vento e ícone
+5. Adicione previsão de 5 dias
+
+====================================================
+DICA
+====================================================
+
+Geocoding (buscar coordenadas da cidade):
+  async function buscarCoordenadas(cidade) {
+      let response = await fetch(
+          "https://geocoding-api.open-meteo.com/v1/search?name=" + cidade + "&count=1"
+      );
+      let data = await response.json();
+      return data.results[0]; // {latitude, longitude, name}
+  }
+
+Buscar previsão:
+  async function buscarClima(lat, lon) {
+      let response = await fetch(
+          "https://api.open-meteo.com/v1/forecast?" +
+          "latitude=" + lat + "&longitude=" + lon +
+          "&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code" +
+          "&daily=temperature_2m_max,temperature_2m_min,weather_code" +
+          "&timezone=America/Sao_Paulo"
+      );
+      return await response.json();
+  }
+
+Ícones por código de clima (WMO):
+  function iconeClima(codigo) {
+      if (codigo <= 1) return "☀️";       // Ensolarado
+      if (codigo <= 3) return "⛅";       // Nublado
+      if (codigo <= 49) return "🌫️";     // Neblina
+      if (codigo <= 69) return "🌧️";     // Chuva
+      if (codigo <= 79) return "❄️";     // Neve
+      if (codigo <= 99) return "⛈️";     // Tempestade
+      return "🌡️";
+  }

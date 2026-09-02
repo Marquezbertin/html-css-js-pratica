@@ -1,0 +1,78 @@
+EXERCÍCIO 06 — Junção Final e Responsividade
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Junte todas as seções do portfólio em um único arquivo completo.
+Adicione responsividade, animações, scroll-reveal e polimento
+final para um portfólio profissional.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Portfólio COMPLETO com:
+- Navbar que muda ao rolar (transparente → sólida)
+- Hero com foto e apresentação
+- Sobre mim com barras de habilidades animadas
+- Grid de projetos com filtro e hover
+- Timeline de experiência
+- Formulário de contato funcional
+- Footer com redes sociais
+- Totalmente responsivo
+- Scroll-reveal em todas as seções
+- Botão "voltar ao topo"
+- Smooth scroll nos links
+
+====================================================
+TAREFAS
+====================================================
+
+1. Junte todas as seções no index.html
+2. Organize o CSS no styles.css por seções
+3. Adicione scroll-reveal com JavaScript
+4. Implemente smooth scroll nos links da navbar
+5. Teste responsividade em todos os tamanhos
+
+====================================================
+DICA
+====================================================
+
+Smooth scroll:
+  html {
+      scroll-behavior: smooth;
+  }
+
+Scroll-reveal:
+  .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+  }
+  .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+  window.addEventListener("scroll", function() {
+      document.querySelectorAll(".reveal").forEach(el => {
+          if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+              el.classList.add("visible");
+          }
+      });
+  });
+
+Organização do CSS:
+  /* === RESET E VARIÁVEIS === */
+  /* === UTILITÁRIOS === */
+  /* === NAVBAR === */
+  /* === HERO === */
+  /* === SOBRE === */
+  /* === HABILIDADES === */
+  /* === PROJETOS === */
+  /* === TIMELINE === */
+  /* === CONTATO === */
+  /* === FOOTER === */
+  /* === RESPONSIVO === */

@@ -1,0 +1,71 @@
+EXERCÍCIO 04 — Pokédex Completa
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma Pokédex funcional que busca dados da PokéAPI e permite
+buscar, navegar e ver detalhes de qualquer Pokémon.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma Pokédex com:
+- Grid com os primeiros 20 Pokémons (foto e nome)
+- Barra de busca por nome
+- Botão "Carregar mais" para buscar mais
+- Ao clicar, abre detalhe com: foto, tipo, stats, altura, peso
+- Tipos com cores diferentes (fogo=vermelho, água=azul, etc.)
+- Loading e erro tratados
+- Design estilizado (vermelho/preto, estilo handheld)
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "pokedex.html" com estrutura HTML5 completa
+2. Busque https://pokeapi.co/api/v2/pokemon?limit=20&offset=0
+3. Para cada Pokémon, busque seus detalhes individualmente
+4. Crie card com foto, nome e tipo
+5. Implemente busca, paginação e modal de detalhes
+
+====================================================
+DICA
+====================================================
+
+Primeira requisição (lista):
+  async function carregarPokemon(offset = 0) {
+      let response = await fetch(
+          "https://pokeapi.co/api/v2/pokemon?limit=20&offset=" + offset
+      );
+      let data = await response.json();
+
+      for (let poke of data.results) {
+          let detalhes = await fetch(poke.url);
+          let pokemon = await detalhes.json();
+          pokemonCards.push(pokemon);
+      }
+      renderizar();
+  }
+
+Obter cor por tipo:
+  function corTipo(tipo) {
+      const cores = {
+          fire: "#ff6b6b",
+          water: "#48dbfb",
+          grass: "#48c774",
+          electric: "#feca57",
+          normal: "#a29bfe",
+          poison: "#a55eea"
+      };
+      return cores[tipo] || "#999";
+  }
+
+Detalhes do Pokémon:
+  async function verDetalhes(nome) {
+      let response = await fetch("https://pokeapi.co/api/v2/pokemon/" + nome);
+      let pokemon = await response.json();
+      // Exibir no modal
+  }

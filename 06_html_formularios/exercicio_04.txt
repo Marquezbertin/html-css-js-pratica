@@ -1,0 +1,56 @@
+EXERCÍCIO 04 — Formulário de Pesquisa Avançado
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um formulário de pesquisa/filtro avançado para um site de
+vagas de estágio. O formulário deve permitir filtrar por várias
+categodas usando diferentes tipos de input.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um formulário de filtro com:
+- Campo de busca por palavra-chave (search)
+- Filtro por área: selects para Área e Tipo de Contrato
+- Filtro por salário: range slider (500 a 5000)
+- Filtro por localização: checkboxes de cidades
+- Filtro por data: input de data mínima
+- Botão "Aplicar Filtros" e "Limpar"
+- Área de exibição dos filtros selecionados
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "pesquisa.html" com estrutura HTML5
+2. Use input type="search" para a busca principal
+3. Crie selects com opções de áreas e tipos de contrato
+4. Use input type="range" para o slider de salário
+5. Use multiple checkboxes para cidades
+
+====================================================
+DICA
+====================================================
+
+Search input:
+  <input type="search" placeholder="Buscar vagas...">
+
+Range slider:
+  <input type="range" min="500" max="5000" value="2500" step="100">
+  <span>Até R$ 2.500</span>
+
+Select com múltipla opção:
+  <select name="area" id="area">
+      <option value="">Todas as áreas</option>
+      <option value="ti">Tecnologia da Informação</option>
+      <option value="marketing">Marketing Digital</option>
+      <option value="design">Design</option>
+      <option value="rh">Recursos Humanos</option>
+  </select>
+
+Para exibir o valor do range em tempo real, precisaremos de JavaScript
+(módulo 07). Por enquanto, coloque o valor fixo no HTML.

@@ -1,0 +1,90 @@
+EXERCÍCIO 05 — Jogo da Velha
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um Jogo da Velha completo (3x3) para dois jogadores.
+O jogo deve alternar entre X e O, verificar vitória e
+permitir reiniciar.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um jogo da velha com:
+- Tabuleiro 3x3 com células clicáveis
+- Indicador de turno (Vez do X ou O)
+- Detecção automática de vitória (8 combinações)
+- Detecção de empate
+- Destaque na linha vencedora
+- Botão "Reiniciar"
+- Placar de vitórias X vs O vs Empates
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "jogo_velha.html" com estrutura HTML5 completa
+2. Crie tabuleiro com 9 células usando grid CSS
+3. Implemente alternância de jogadores
+4. Verifique vitória a cada jogada
+5. Mantenha placar e permita reiniciar
+
+====================================================
+DICA
+====================================================
+
+Tabuleiro com array:
+  let tabuleiro = ["", "", "", "", "", "", "", "", ""];
+  let jogadorAtual = "X";
+
+  function jogar(index) {
+      if (tabuleiro[index] !== "") return;
+      tabuleiro[index] = jogadorAtual;
+      renderizar();
+      if (verificarVitoria()) {
+          alert(jogadorAtual + " venceu!");
+      } else if (tabuleiro.every(c => c !== "")) {
+          alert("Empate!");
+      } else {
+          jogadorAtual = jogadorAtual === "X" ? "O" : "X";
+      }
+  }
+
+Combinações vencedoras:
+  const vitorias = [
+      [0,1,2], [3,4,5], [6,7,8], // linhas
+      [0,3,6], [1,4,7], [2,5,8], // colunas
+      [0,4,8], [2,4,6]           // diagonais
+  ];
+
+  function verificarVitoria() {
+      for (let combo of vitorias) {
+          if (tabuleiro[combo[0]] === tabuleiro[combo[1]] &&
+              tabuleiro[combo[1]] === tabuleiro[combo[2]] &&
+              tabuleiro[combo[0]] !== "") {
+              return true;
+          }
+      }
+      return false;
+  }
+
+CSS Grid para o tabuleiro:
+  .tabuleiro {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      gap: 5px;
+      margin: 20px auto;
+  }
+  .celula {
+      width: 100px;
+      height: 100px;
+      font-size: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #333;
+      cursor: pointer;
+  }

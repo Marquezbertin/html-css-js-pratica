@@ -1,0 +1,49 @@
+EXERCÍCIO 01 — Transições em Botões
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma página com 4 botões estilizados que possuem transições
+suaves quando você passa o mouse por cima. Cada botão deve ter
+um efeito diferente.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com 4 botões centralizados:
+- Botão 1: muda de cor suavemente no hover
+- Botão 2: aumenta de tamanho no hover
+- Botão 3: muda de cor E aumenta no hover
+- Botão 4: aparece uma borda brilhante no hover
+- Todos com transição suave de 0.3s
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "transicoes.html" com estrutura HTML5
+2. Estilize 4 botões com cores e formatos diferentes
+3. Adicione transition em cada botão
+4. Crie efeitos :hover diferentes para cada um
+5. Use pelo menos 2 propriedades diferentes (color, transform, border)
+
+====================================================
+DICA
+====================================================
+
+Para transição suave:
+  .botao {
+      transition: all 0.3s ease;
+  }
+
+O valor ease cria uma animação que começa e termina devagar.
+Outras opções: linear, ease-in, ease-out, ease-in-out.
+
+Para mapear efeitos:
+  .botao1:hover { background-color: #ff4444; }
+  .botao2:hover { transform: scale(1.1); }
+  .botao3:hover { background: #00cc66; transform: scale(1.05); }
+  .botao4:hover { box-shadow: 0 0 15px #ffcc00; }

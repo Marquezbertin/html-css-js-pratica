@@ -1,0 +1,78 @@
+EXERCÍCIO 05 — Mini-Projeto: Calculadora
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma calculadora completa com interface visual usando HTML,
+CSS e JavaScript. A calculadora deve funcionar como uma calculadora
+real, realizando 4 operações matemáticas.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma calculadora visual com:
+- Display mostrando os números digitados
+- Botões de 0 a 9
+- Botões de operações: +, -, ×, ÷
+- Botão = para calcular
+- Botão C para limpar
+- Botão . para decimais
+- Layout estilo calculadora de celular
+- Funcionamento real de cada operação
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "calculadora.html" com estrutura HTML5 completa
+2. Crie o layout com grid CSS para os botões
+3. Implemente as funções JavaScript: numeros, operacao, calcular, limpar
+4. Trate divisão por zero
+5. Permita operações encadeadas (ex: 5 + 3 = 8, depois + 2 = 10)
+
+====================================================
+DICA
+====================================================
+
+Layout com CSS Grid:
+  .calculadora {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      max-width: 300px;
+  }
+
+Variáveis para controlar estado:
+  let display = "";    // O que aparece no visor
+  let operacao = "";   // Operação selecionada
+  let primeiroNumero = ""; // Primeiro número
+  let calculando = false;  // Se está no meio de uma operação
+
+Função de número:
+  function digitarNumero(num) {
+      display += num;
+      document.getElementById("visor").value = display;
+  }
+
+Função de operação:
+  function definirOperacao(op) {
+      primeiroNumero = display;
+      operacao = op;
+      display = "";
+      calculando = true;
+  }
+
+Função de resultado:
+  function calcular() {
+      let segundoNumero = display;
+      let resultado;
+      if (operacao === "+") resultado = parseFloat(primeiroNumero) + parseFloat(segundoNumero);
+      // ...其他 operações
+      display = resultado.toString();
+      document.getElementById("visor").value = display;
+  }
+
+Dica: use <input readonly> para o display (apenas visual).

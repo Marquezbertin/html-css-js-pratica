@@ -1,0 +1,82 @@
+EXERCÍCIO 03 — Bola e Colisões
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Implemente a bola que se move pelo campo e colide com as raquetes
+e as bordas superior/inferior. A bola deve quicar corretamente.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Funcionalidades:
+- Bola branca se movendo em diagonal
+- Colisão com raquetes: bola volta com ângulo diferente
+- Colisão com borda superior/inferior: bola quica
+- Velocidade da bola aumenta gradualmente
+- Bola sai pela esquerda/direita = ponto
+- Bola reinicia após pontuação
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie objeto bola com posição, velocidade e raio
+2. Mova a bola no game loop
+3. Detecte colisão com raquetes
+4. Detecte colisão com bordas superior/inferior
+5. Detecte saída pelas laterais
+
+====================================================
+DICA
+====================================================
+
+Objeto bola:
+  let bola = {
+      x: canvas.width / 2,
+      y: canvas.height / 2,
+      raio: 8,
+      velocidadeX: 5,
+      velocidadeY: 5
+  };
+
+Mover a bola:
+  function atualizarBola() {
+      bola.x += bola.velocidadeX;
+      bola.y += bola.velocidadeY;
+  }
+
+Colisão com bordas:
+  if (bola.y - bola.raio < 0 || bola.y + bola.raio > canvas.height) {
+      bola.velocidadeY *= -1; // Inverte direção Y
+  }
+
+Colisão com raquete:
+  function colisaoRaquete(raquete) {
+      return bola.x - bola.raio < raquete.x + raquete.largura &&
+             bola.x + bola.raio > raquete.x &&
+             bola.y - bola.raio < raquete.y + raquete.altura &&
+             bola.y + bola.raio > raquete.y;
+  }
+
+Quando colidir com raquete:
+  if (colisaoRaquete(raqueteEsquerda)) {
+      bola.velocidadeX *= -1; // Inverte direção X
+      // Aumenta velocidade gradualmente
+      bola.velocidadeX *= 1.1;
+  }
+
+Saiu pela lateral:
+  if (bola.x < 0) {
+      // Ponto para jogador direito
+      placar.direita++;
+      resetarBola();
+  }
+  if (bola.x > canvas.width) {
+      // Ponto para jogador esquerdo
+      placar.esquerda++;
+      resetarBola();
+  }

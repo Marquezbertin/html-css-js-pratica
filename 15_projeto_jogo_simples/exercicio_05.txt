@@ -1,0 +1,73 @@
+EXERCÍCIO 05 — IA do Oponente
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Implemente uma inteligência artificial para controlar a raquete
+direita, fazendo o jogo funcionar como Pong solo (1 jogador vs
+computador).
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Funcionalidades:
+- Raquete direita controlada pela IA
+- IA segue a posição Y da bola
+- IA não é perfeita (tem atraso/variação)
+- Dificuldade ajustável: fácil, médio, difícil
+- Mensagem indicando o nível atual
+- Troca de nível com botão
+
+====================================================
+TAREFAS
+====================================================
+
+1. Implemente IA que segue a bola com atraso
+2. Adicione variação aleatória para não ser perfeita
+3. Crie seletor de dificuldade (fácil/médio/difícil)
+4. Ajuste velocidade da IA conforme dificuldade
+5. Remova controles manuais da raquete direita
+
+====================================================
+DICA
+====================================================
+
+IA simples:
+  function atualizarIA() {
+      let velocidadeIA = 4; // Fácil: 3, Médio: 4, Difício: 6
+      let centroRaquete = raqueteDireita.y + raqueteDireita.altura / 2;
+
+      if (centroRaquete < bola.y - 10) {
+          raqueteDireita.y += velocidadeIA;
+      } else if (centroRaquete > bola.y + 10) {
+          raqueteDireita.y -= velocidadeIA;
+      }
+
+      // Limites
+      if (raqueteDireita.y < 0) raqueteDireita.y = 0;
+      if (raqueteDireita.y + raqueteDireita.altura > canvas.height) {
+          raqueteDireita.y = canvas.height - raqueteDireita.altura;
+      }
+  }
+
+IA com dificuldade:
+  let dificuldade = {
+      facil: { velocidade: 3, erro: 30 },
+      medio: { velocidade: 5, erro: 10 },
+      dificil: { velocidade: 7, erro: 0 }
+  };
+
+  function atualizarIA() {
+      let config = dificuldade[dificuldadeAtual];
+      let centroRaquete = raqueteDireita.y + raqueteDireita.altura / 2;
+      let alvo = bola.y + (Math.random() * config.erro - config.erro / 2);
+
+      if (centroRaquete < alvo) {
+          raqueteDireita.y += config.velocidade;
+      } else {
+          raqueteDireita.y -= config.velocidade;
+      }
+  }

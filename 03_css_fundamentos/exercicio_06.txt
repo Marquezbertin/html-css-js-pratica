@@ -1,0 +1,60 @@
+EXERCÍCIO 06 — Página Completa Estilizada
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Hora de criar uma página HTML completa com CSS profissional.
+Combine tudo que aprendeu: seletores, cores, fontes, box model
+e display para criar uma landing page simples sobre um app.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página profissional com:
+- Header com título e subtítulo centralizados
+- Seção "Recursos" com 3 cards em linha (um do lado do outro)
+- Seção "Depoimentos" com 2 cards de depoimento
+- Rodapé com informações de contato
+- Cores harmoniosas e fontes organizadas
+- Espaçamento consistente entre seções
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "landing.html" com estrutura HTML5 completa
+2. Estilize o header com fundo colorido e texto branco
+3. Crie 3 cards de recursos com display: inline-block
+4. Crie 2 cards de depoimento com borda e sombra
+5. Estilize o rodapé com fundo escuro e texto claro
+
+====================================================
+DICA
+====================================================
+
+Para alinhar 3 cards lado a lado:
+  .card {
+      display: inline-block;
+      width: 30%;
+      vertical-align: top;
+      margin: 1%;
+      padding: 20px;
+      box-sizing: border-box;
+  }
+
+Dica importante: adicione box-sizing: border-box em TODOS os elementos:
+  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+  }
+
+Isso evita problemas com largura e padding.
+
+Organize o CSS em seções com comentários:
+  /* === HEADER === */
+  /* === CARDS === */
+  /* === RODAPÉ === */

@@ -1,0 +1,63 @@
+EXERCÍCIO 04 — Media Queries
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma página que muda completamente de layout dependendo do
+tamanho da tela: no celular mostra tudo empilhado, no tablet mostra
+2 colunas e no desktop mostra 3 colunas.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Header que muda de tamanho em cada breakpoint
+- Grid de cards: 1 coluna (celular) → 2 colunas (tablet) → 3 colunas (desktop)
+- Navbar que empilha os links no celular
+- Textos que mudam de tamanho conforme a tela
+- Imagem que muda de tamanho
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "media_queries.html" com estrutura HTML5
+2. Defina estilos base para celular (max-width: 767px)
+3. Adicione media query para tablet (min-width: 768px)
+4. Adicione media query para desktop (min-width: 1024px)
+5. Mude pelo menos 3 propriedades em cada breakpoint
+
+====================================================
+DICA
+====================================================
+
+Media queries funcionam assim:
+  /* Celular (estilo base) */
+  .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+  }
+
+  /* Tablet */
+  @media (min-width: 768px) {
+      .grid {
+          grid-template-columns: 1fr 1fr;
+      }
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+      .grid {
+          grid-template-columns: 1fr 1fr 1fr;
+      }
+  }
+
+Abaixo de 768px = celular
+Entre 768px e 1023px = tablet
+Acima de 1024px = desktop
+
+Sempre comece pelo estilo do CELULAR e adicione media queries
+para telas maiores (mobile-first).

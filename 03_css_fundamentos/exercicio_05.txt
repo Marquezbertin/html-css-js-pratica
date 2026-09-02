@@ -1,0 +1,68 @@
+EXERCÍCIO 05 — Card Estilizado
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um card de perfil estilo "redes sociais" — aquele card
+branco com borda arredondada, sombra e foto de perfil. Use
+tudo que aprendeu sobre box model, cores, fontes e display.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com fundo cinza contendo:
+- Um card centralizado na página
+- Foto de perfil circular no topo do card
+- Nome em destaque
+- Profissão/título em cinza
+- Breve bio
+- Tags/badges coloridos com habilidades
+- Sombra suave no card
+- Borda arredondada
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "card.html" com estrutura HTML5
+2. Centralize o card na página com margin: auto
+3. Estilize o card com fundo branco, padding, border-radius e box-shadow
+4. Adicione uma imagem circular (use border-radius: 50%)
+5. Crie classes .tag para badges coloridos com display: inline-block
+
+====================================================
+DICA
+====================================================
+
+Para centralizar um card:
+  .card {
+      width: 350px;
+      margin: 40px auto; /* auto = centraliza horizontalmente */
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+  }
+
+Para imagem circular:
+  .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+  }
+
+Para badges:
+  .tag {
+      display: inline-block;
+      background: #0077ff;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      margin: 3px;
+  }

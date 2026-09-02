@@ -1,0 +1,77 @@
+EXERCÍCIO 04 — Persistência com localStorage
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Implemente persistência de dados usando localStorage. As tarefas
+devem ser salvas automaticamente e carregadas ao abrir a página.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Funcionalidades:
+- Tarefas são salvas no localStorage a cada mudança
+- Ao recarregar a página, tarefas anteriores aparecem
+- Dados são convertidos com JSON.stringify/parse
+- Array recuperado corretamente (tratar null)
+- Funciona mesmo fechando e reabrindo o navegador
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie função salvarLocalStorage()
+2. Crie function carregarLocalStorage()
+3. Chame salvar a cada adição, toggle e remoção
+4. Chame carregar no window.onload
+5. Trate caso não haja dados salvos
+
+====================================================
+DICA
+====================================================
+
+Salvar:
+  function salvarLocalStorage() {
+      localStorage.setItem("tarefas", JSON.stringify(tarefas));
+      localStorage.setItem("proximoId", proximoId.toString());
+  }
+
+Carregar:
+  function carregarLocalStorage() {
+      let dados = localStorage.getItem("tarefas");
+      if (dados) {
+          tarefas = JSON.parse(dados);
+      }
+      let id = localStorage.getItem("proximoId");
+      if (id) {
+          proximoId = parseInt(id);
+      }
+  }
+
+Chamar ao iniciar:
+  window.onload = function() {
+      carregarLocalStorage();
+      renderizar();
+  }
+
+Chamar em cada operação:
+  function adicionarTarefa() {
+      // ...código existente...
+      salvarLocalStorage();
+      renderizar();
+  }
+
+  function toggle(id) {
+      // ...código existente...
+      salvarLocalStorage();
+      renderizar();
+  }
+
+  function remover(id) {
+      // ...código existente...
+      salvarLocalStorage();
+      renderizar();
+  }

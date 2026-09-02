@@ -1,0 +1,66 @@
+EXERCÍCIO 04 — Funções
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma biblioteca de funções úteis para o dia a dia de um
+estudante. Cada função deve resolver um problema diferente e
+ser chamada a partir de botões na página.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com 4 seções, cada uma com um botão:
+- Função 1: Calcular média de 3 notas (recebe 3 valores)
+- Função 2: Converter Celsius para Fahrenheit
+- Função 3: Verificar se um número é par ou ímpar
+- Função 4: Gerar número aleatório entre 1 e 100
+- Cada função retorna o resultado para a página
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "funcoes.html" com estrutura HTML5
+2. Crie a função calcularMedia(n1, n2, n3) que retorna a média
+3. Crie a função celsiusFahrenheit(c) que retorna o resultado
+4. Crie a function parImpar(num) que retorna "Par" ou "Ímpar"
+5. Crie a function numeroAleatorio() que retorna 1-100
+
+====================================================
+DICA
+====================================================
+
+Função de média:
+  function calcularMedia(n1, n2, n3) {
+      let media = (n1 + n2 + n3) / 3;
+      return media;
+  }
+
+Conversão de temperatura:
+  function celsiusFahrenheit(c) {
+      let f = (c * 9/5) + 32;
+      return f;
+  }
+
+Par ou ímpar (use operador módulo %):
+  function parImpar(num) {
+      if (num % 2 === 0) {
+          return "Par";
+      } else {
+          return "Ímpar";
+      }
+  }
+
+Número aleatório:
+  function numeroAleatorio() {
+      let min = 1;
+      let max = 100;
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+Para chamar a função no botão:
+  <button onclick="mostrarResultado()">Calcular</button>

@@ -1,0 +1,53 @@
+EXERCÍCIO 01 — Selecionar e Alterar Elementos
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma página com vários elementos HTML e use JavaScript para
+selecioná-los e alterar suas propriedades: cor, texto, tamanho
+de fonte e fundo.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Título que muda de cor ao clicar em um botão
+- Parágrafo que troca de texto
+- Imagem que muda o src
+- Botão que altera o fundo da página
+- 3 botões que mudam a cor do título individualmente
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "dom_basico.html" com estrutura HTML5
+2. Use getElementById para selecionar o título
+3. Mude a cor do título com style.color
+4. Mude o texto do parágrafo com innerText
+5. Adicione botões que alteram diferentes propriedades
+
+====================================================
+DICA
+====================================================
+
+Selecionar e alterar:
+  let titulo = document.getElementById("titulo");
+  titulo.style.color = "red";
+
+Mudar texto:
+  let p = document.getElementById("paragrafo");
+  p.innerText = "Novo texto!";
+
+Mudar fundo da página:
+  document.body.style.backgroundColor = "black";
+
+Para cada botão, crie uma função diferente:
+  <button onclick="mudarCor()">Vermelho</button>
+
+  function mudarCor() {
+      document.getElementById("titulo").style.color = "red";
+  }

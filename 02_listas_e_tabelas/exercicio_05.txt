@@ -1,0 +1,57 @@
+EXERCÍCIO 05 — Playlist com Listas Aninhadas
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma página mostrando suas playlists de música organizadas por
+gênero. Cada gênero deve ser uma lista, e dentro dele, os artistas
+e músicas.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Título "Minhas Playlists"
+- Lista principal com 3 gêneros musicais
+- Dentro de cada gênero, uma sublista com 3 artistas
+- Dentro de cada artista, uma sub-sublista com 2 músicas
+- Total de 18+ músicas aninhadas na estrutura
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie o arquivo "playlists.html" com estrutura HTML5
+2. Use <ul> para os gêneros musicais
+3. Dentro de cada gênero, use <ul> aninhada para artistas
+4. Dentro de cada artista, use <ul> aninhada para músicas
+5. Adicione pelo menos 3 níveis de profundidade nas listas
+
+====================================================
+DICA
+====================================================
+
+Estrutura esperada:
+  <ul>
+      <li>Pop
+          <ul>
+              <li>Taylor Swift
+                  <ul>
+                      <li>Anti-Hero</li>
+                      <li>Shake It Off</li>
+                  </ul>
+              </li>
+              <li>Dua Lipa
+                  <ul>
+                      <li>Levitating</li>
+                      <li>Don't Start Now</li>
+                  </ul>
+              </li>
+          </ul>
+      </li>
+  </ul>
+
+Listas aninhadas ficam com recuos automáticos no navegador.

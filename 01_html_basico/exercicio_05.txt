@@ -1,0 +1,48 @@
+EXERCÍCIO 05 — Combinando Elementos
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Você vai criar uma página sobre um personagem de anime/jogo,
+combinando todos os elementos que aprendeu: títulos, parágrafos,
+links, imagens, negrito e itálico.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Título principal com o nome do personagem
+- Uma imagem do personagem
+- Seção "Biografia" com parágrafos e texto em negrito
+- Seção "Habilidades" com uma lista simples de poderes
+- Seção "Curiosidades" com texto em itálico
+- Links para sites relacionados ao personagem
+- Um parágrafo final com créditos
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie o arquivo "personagem.html" com estrutura HTML5 completa
+2. Use <h1> para o nome e <h2> para as seções
+3. Adicione uma imagem do personagem (use picsum ou URL real)
+4. Na biografia, use <strong> para nomes importantes e <em> para títulos
+5. Crie pelo menos 3 links para sites/fansites relacionados
+
+====================================================
+DICA
+====================================================
+
+Combine tudo que aprendeu. Por exemplo:
+  <h1>Goku</h1>
+  <img src="https://picsum.photos/300/400" alt="Goku" width="300">
+  <h2>Biografia</h2>
+  <p><strong>Goku</strong> é o protagonista de <em>Dragon Ball</em>.</p>
+  <p>Ele vive na Terra com sua família e treina artes marciais.</p>
+  <h2>Links Úteis</h2>
+  <a href="https://dragonball.fandom.com" target="_blank">Wiki de Dragon Ball</a>
+
+Pense no personagem que mais gosta e crie a página para ele!

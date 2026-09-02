@@ -1,0 +1,55 @@
+EXERCÍCIO 02 — Condicionais
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um "classificador de notas" que recebe a nota de um aluno
+(0 a 10) e mostra se está aprovado, recuperação ou reprovado.
+Use condicionais (if/else) para diferentes cenários.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Entrada de nota via prompt() ou valor fixo no código
+- Classificação: aprovado (≥7), recuperação (5-6.9), reprovado (<5)
+- Mensagem motivacional diferente para cada caso
+- Tratamento de nota inválida (menor que 0 ou maior que 10)
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "notas.html" com estrutura HTML5
+2. Use prompt() para pedir a nota ao usuário
+3. Use if/else if/else para classificar a nota
+4. Trate nota inválida com um else final
+5. Exiba o resultado na página com cores diferentes
+
+====================================================
+DICA
+====================================================
+
+Prompt retorna string, converta para número:
+  let nota = parseFloat(prompt("Digite sua nota (0-10):"));
+
+Estrutura de condicionais:
+  if (nota >= 7) {
+      resultado = "Aprovado!";
+      cor = "green";
+  } else if (nota >= 5) {
+      resultado = "Recuperação";
+      cor = "orange";
+  } else if (nota >= 0) {
+      resultado = "Reprovado";
+      cor = "red";
+  } else {
+      resultado = "Nota inválida!";
+      cor = "gray";
+  }
+
+Para mudar a cor do resultado:
+  document.getElementById("resultado").style.color = cor;

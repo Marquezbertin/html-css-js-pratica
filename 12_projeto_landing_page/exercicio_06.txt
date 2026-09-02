@@ -1,0 +1,78 @@
+EXERCÍCIO 06 — Junção e Responsividade Final
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Agora junte todas as seções criadas nos exercícios anteriores
+em um único arquivo HTML completo. Adicione responsividade
+final, testes e polimento visual.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma landing page COMPLETA com:
+- Todas as seções: Navbar, Hero, Features, Como Funciona,
+  Depoimentos, Preços, FAQ, CTA Final, Footer
+- Transições suaves em todos os hover effects
+- Responsivo em todos os tamanhos (320px a 1920px)
+- Animação de scroll (elementos aparecem ao rolar)
+- Navbar muda ao rolar
+- Botão "voltar ao topo"
+- Velocidade de carregamento ok
+
+====================================================
+TAREFAS
+====================================================
+
+1. Junte todas as seções no index.html
+2. Organize o CSS no styles.css com seções comentadas
+3. Adicione media queries para mobile/tablet/desktop
+4. Teste em diferentes tamanhos de tela
+5. Adicione animação de scroll-reveal com JavaScript
+
+====================================================
+DICA
+====================================================
+
+Animação ao rolar (scroll reveal):
+  function revealOnScroll() {
+      let elementos = document.querySelectorAll(".reveal");
+      for (let el of elementos) {
+          let topo = el.getBoundingClientRect().top;
+          if (topo < window.innerHeight - 100) {
+              el.classList.add("visible");
+          }
+      }
+  }
+  window.addEventListener("scroll", revealOnScroll);
+
+CSS:
+  .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+  }
+  .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+Botão voltar ao topo:
+  <button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+Organize o CSS em seções:
+  /* === RESET === */
+  /* === VARIÁVEIS === */
+  /* === NAVBAR === */
+  /* === HERO === */
+  /* === FEATURES === */
+  /* === PASSOS === */
+  /* === DEPOIMENTOS === */
+  /* === PREÇOS === */
+  /* === FAQ === */
+  /* === CTA === */
+  /* === FOOTER === */
+  /* === RESPONSIVO === */

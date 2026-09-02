@@ -1,0 +1,65 @@
+EXERCÍCIO 05 — Formulário de Enquete
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um formulário de enquete/pesquisa de opinião sobre qual é
+a melhor série de streaming. O formulário deve ser interativo e
+visualmente atraente.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um formulário estilizado com:
+- Título "Qual sua série favorita?"
+- Pergunta 1: radio buttons com 5 séries e imagens
+- Pergunta 2: seleção de gênero favorito (select)
+- Pergunta 3: quanto tempo assiste por dia (range)
+- Pergunta 4: recomendaria para amigos? (radio sim/não)
+- Pergunta 5: textarea com opinião livre
+- Botão de enviar estilizado
+- Progresso visual do preenchimento
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "enquete.html" com estrutura HTML5 completa
+2. Use radio buttons estilizados para a primeira pergunta
+3. Use select com optgroup para agrupar gêneros
+4. Use range para tempo de assistência
+5. Use textarea para opinião livre com maxlength
+
+====================================================
+DICA
+====================================================
+
+Optgroup agrupa opções no select:
+  <select name="genero">
+      <option value="">Selecione...</option>
+      <optgroup label="Drama">
+          <option value="breaking-bad">Breaking Bad</option>
+          <option value="stranger-things">Stranger Things</option>
+      </optgroup>
+      <optgroup label="Comédia">
+          <option value="the-office">The Office</option>
+          <option value="brooklyn-99">Brooklyn 99</option>
+      </optgroup>
+  </select>
+
+Radio buttons estilizados (CSS):
+  input[type="radio"] {
+      display: none; /* Esconde o radio padrão */
+  }
+  input[type="radio"]:checked + label {
+      background: #0077ff;
+      color: white;
+  }
+
+Para o progresso, use uma barra simples:
+  <div class="progresso">
+      <div class="barra" style="width: 60%;"></div>
+  </div>

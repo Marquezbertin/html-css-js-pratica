@@ -1,0 +1,65 @@
+EXERCÍCIO 04 — Formulários com Bootstrap
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um formulário de contato profissional usando os componentes
+de formulário do Bootstrap, com validação visual e layout responsivo.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um formulário com:
+- Nome completo (input text)
+- E-mail (input email)
+- Assunto (select com opções)
+- Mensagem (textarea)
+- Checkbox de termos
+- Botão de enviar estilizado
+- Layout em 2 colunas no desktop
+- Validação Bootstrap (campos obrigatórios)
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "contato.html" com Bootstrap via CDN
+2. Use form-label, form-control, form-select
+3. Use row e col-md-6 para layout 2 colunas
+4. Adicione required nos campos obrigatórios
+5. Use classes de validação Bootstrap (is-valid, is-invalid)
+
+====================================================
+DICA
+====================================================
+
+Formulário Bootstrap:
+  <form>
+      <div class="row mb-3">
+          <div class="col-md-6">
+              <label class="form-label">Nome</label>
+              <input type="text" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+              <label class="form-label">E-mail</label>
+              <input type="email" class="form-control" required>
+          </div>
+      </div>
+      <div class="mb-3">
+          <label class="form-label">Assunto</label>
+          <select class="form-select" required>
+              <option value="">Selecione...</option>
+              <option>Dúvida</option>
+              <option>Sugestão</option>
+              <option>Reclamação</option>
+          </select>
+      </div>
+      <div class="mb-3">
+          <label class="form-label">Mensagem</label>
+          <textarea class="form-control" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>

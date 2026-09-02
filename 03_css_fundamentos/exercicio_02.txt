@@ -1,0 +1,46 @@
+EXERCÍCIO 02 — Classes e IDs
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma página que demonstre a diferença entre selecionar por
+elemento, por classe e por id. Cada elemento deve ficar com um
+estilo diferente para evidenciar a hierarquia dos seletores.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Todos os <h2> com cor azul (seletor por elemento)
+- 3 parágrafos, sendo 1 com classe .destaque (fundo amarelo)
+- 1 parágrafo com classe .importante (borda vermelha)
+- 1 elemento com id="unico" (fonte grande e negrito)
+- Um parágrafo sem estilo especial para comparação
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "seletores.html" com estrutura HTML5
+2. No CSS, estilize TODOS os h2 com cor azul usando seletor de elemento
+3. Crie a classe .destaque com background amarelo
+4. Crie a classe .importante com border vermelha
+5. Crie o id #unico com font-size grande e font-weight bold
+
+====================================================
+DICA
+====================================================
+
+Seletor por elemento afeta TODOS:
+  h2 { color: blue; }
+
+Seletor por classe afeta TODOS com aquela classe:
+  .destaque { background-color: yellow; }
+
+Seletor por id afeta UM elemento único:
+  #unico { font-size: 28px; }
+
+Lembre: classe = . (ponto), id = # (cerquilha)

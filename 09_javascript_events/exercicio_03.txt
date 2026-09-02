@@ -1,0 +1,70 @@
+EXERCÍCIO 03 — Quadro de Desenho com Mouse
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um quadro de desenho onde o usuário pode pintar clicando
+e arrastando o mouse. Use os eventos de mouse para detectar
+quando está desenhando.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um quadro de desenho com:
+- Canvas preto para desenhar
+- Cores disponíveis para selecionar
+- Seletor de tamanho do pincel
+- Botão "Limpar" para apagar tudo
+- Desenho funciona clicando e arrastando
+- Pincel circular com tamanho variável
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "desenho.html" com estrutura HTML5 completa
+2. Use <canvas> para a área de desenho
+3. Detecte mousedown (começar a desenhar) e mouseup (parar)
+4. Use mousemove para desenhar enquanto o mouse se move
+5. Adicione seletor de cor e tamanho
+
+====================================================
+DICA
+====================================================
+
+Canvas e contexto:
+  let canvas = document.getElementById("canvas");
+  let ctx = canvas.getContext("2d");
+  canvas.width = 600;
+  canvas.height = 400;
+
+Variável de controle:
+  let desenhando = false;
+
+Eventos:
+  canvas.addEventListener("mousedown", function(e) {
+      desenhando = true;
+      ctx.beginPath();
+      ctx.moveTo(e.offsetX, e.offsetY);
+  });
+
+  canvas.addEventListener("mousemove", function(e) {
+      if (!desenhando) return;
+      ctx.lineTo(e.offsetX, e.offsetY);
+      ctx.strokeStyle = corSelecionada;
+      ctx.lineWidth = tamanhoPincel;
+      ctx.lineCap = "round";
+      ctx.stroke();
+  });
+
+  canvas.addEventListener("mouseup", function() {
+      desenhando = false;
+  });
+
+Limpar:
+  function limpar() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }

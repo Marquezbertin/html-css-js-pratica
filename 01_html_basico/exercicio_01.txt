@@ -1,0 +1,48 @@
+EXERCÍCIO 01 — Minha Primeira Página HTML
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Você acabou de instalar o VS Code e quer criar sua primeira página da web.
+Crie uma página HTML que mostre uma mensagem de boas-vindas para quem
+visitar seu site.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página branca no navegador com:
+- Um título "Bem-vindo ao Meu Site!" no topo
+- Um parágrafo de texto com uma apresentação sua
+- Um segundo parágrafo dizendo o que você pretende aprender
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie um arquivo chamado "index.html"
+2. Adicione a estrutura básica do HTML5 (DOCTYPE, html, head, body)
+3. No <head>, defina o charset UTF-8 e o título da página
+4. No <body>, adicione um <h1> com o texto "Bem-vindo ao Meu Site!"
+5. Adicione dois parágrafos (<p>) com textos de sua autoria
+
+====================================================
+DICA
+====================================================
+
+Lembre-se de que todo conteúdo visível vai dentro da tag <body>.
+Use o atalho ! + Tab no VS Code para gerar a estrutura básica
+do HTML automaticamente.
+
+Exemplo de estrutura esperada:
+  <!DOCTYPE html>
+  <html>
+    <head>...</head>
+    <body>
+      <h1>...</h1>
+      <p>...</p>
+      <p>...</p>
+    </body>
+  </html>

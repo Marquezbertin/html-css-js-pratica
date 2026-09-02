@@ -1,0 +1,45 @@
+EXERCÍCIO 01 — Lista de Compras
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Você está organizando uma festa de aniversário e precisa criar uma
+lista de compras completa para não esquecer nada. Crie uma página
+HTML com todas as listas de itens necessários.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Título "Festa de Aniversário — Lista de Compras"
+- Seção "Comida" com uma lista não ordenada (ul) de 5 itens
+- Seção "Bebidas" com uma lista não ordenada de 4 itens
+- Seção "Decoração" com uma lista não ordenada de 4 itens
+- Cada seção com um subtítulo (h2)
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie o arquivo "lista_compras.html" com estrutura HTML5
+2. Adicione o título da página com <h1>
+3. Crie 3 seções com <h2> e listas <ul> com <li> para cada uma
+4. Adicione no mínimo 13 itens no total entre todas as listas
+5. Cada item da lista deve ser uma tag <li> dentro de uma <ul>
+
+====================================================
+DICA
+====================================================
+
+A estrutura de cada seção fica assim:
+  <h2>Comida</h2>
+  <ul>
+      <li>Bolo de Chocolate</li>
+      <li>Salgadinhos</li>
+      <li>Pizza</li>
+  </ul>
+
+Lembre-se: <ul> é para listas com bolinhas, <ol> é para listas numeradas.

@@ -1,0 +1,61 @@
+EXERCÍCIO 03 — Loops e Arrays
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um programa que gerencie uma lista de tarefas usando arrays
+e loops. O programa deve permitir adicionar, remover e listar
+tarefas.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Lista de tarefas pré-definidas (array com 5 tarefas)
+- Botão para adicionar nova tarefa (prompt)
+- Botão para remover última tarefa
+- Botão para mostrar todas as tarefas numeradas
+- Contador de tarefas total
+- Tarefas exibidas na página (não só no console)
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "tarefas.html" com estrutura HTML5
+2. Crie um array com 5 tarefas iniciais
+3. Use push() para adicionar tarefas
+4. Use pop() para remover a última
+5. Use for...of ou forEach para percorrer e exibir as tarefas
+
+====================================================
+DICA
+====================================================
+
+Array de tarefas:
+  let tarefas = [
+      "Estudar HTML",
+      "Praticar CSS",
+      "Aprender JavaScript",
+      "Fazer exercícios",
+      "Criar projeto"
+  ];
+
+Adicionar: tarefas.push("Nova tarefa");
+Remover: tarefas.pop();
+Exibir com loop:
+  for (let i = 0; i < tarefas.length; i++) {
+      console.log((i+1) + ". " + tarefas[i]);
+  }
+
+Para exibir na página:
+  let html = "";
+  for (let tarefa of tarefas) {
+      html += "<li>" + tarefa + "</li>";
+  }
+  document.getElementById("lista").innerHTML = html;
+
+Mostrar total: console.log("Total: " + tarefas.length);

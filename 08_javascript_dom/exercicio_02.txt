@@ -1,0 +1,62 @@
+EXERCÍCIO 02 — Criar e Remover Elementos
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um "Quadro de Avisos" onde os usuários podem adicionar,
+marcar como lido e remover avisos. Os elementos são criados
+e removidos dinamicamente com JavaScript.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um quadro de avisos com:
+- Campo de texto e botão "Adicionar Aviso"
+- Lista de avisos aparecendo abaixo
+- Botão "X" em cada aviso para remover
+- Aviso marcado como lido fica com opacidade reduzida
+- Contador de avisos ativos
+- Avisos pré-definidos ao carregar a página
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "quadro_avisos.html" com estrutura HTML5
+2. Use createElement para criar novos elementos de aviso
+3. Use appendChild para adicionar ao final da lista
+4. Use remove() para remover um aviso
+5. Use classList.toggle para marcar como lido
+
+====================================================
+DICA
+====================================================
+
+Criar novo aviso:
+  function adicionarAviso() {
+      let texto = document.getElementById("input").value;
+      let div = document.createElement("div");
+      div.className = "aviso";
+      div.innerHTML = '<span>' + texto + '</span>' +
+                      '<button onclick="remover(this)">X</button>';
+      document.getElementById("lista").appendChild(div);
+  }
+
+Remover elemento:
+  function remover(botao) {
+      botao.parentNode.remove();
+  }
+
+Marcar como lido:
+  function marcarLido(elemento) {
+      elemento.classList.toggle("lido");
+  }
+
+CSS para aviso lido:
+  .aviso.lido {
+      opacity: 0.5;
+      text-decoration: line-through;
+  }

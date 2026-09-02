@@ -1,0 +1,52 @@
+EXERCÍCIO 01 — Grid System do Bootstrap
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Pratique o grid system do Bootstrap criando diferentes layouts
+de colunas. Entenda como as 12 colunas funcionam e como
+combinar tamanhos para criar layouts variados.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com 4 seções mostrando diferentes layouts:
+- Seção 1: 3 colunas iguais (col-md-4 + col-md-4 + col-md-4)
+- Seção 2: 2 colunas (col-md-8 + col-md-4)
+- Seção 3: 4 colunas (col-md-3 cada)
+- Seção 4: 1 coluna mobile → 2 colunas desktop (col-12 col-md-6)
+- Cada coluna com fundo colorido para visualizar
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "grid.html" com Bootstrap via CDN
+2. Use container, row e col para cada seção
+3. Use classes de cor de fundo (bg-primary, bg-success, etc.)
+4. Adicione padding e margem com classes Bootstrap (p-3, mb-4)
+5. Teste redimensionando a página
+
+====================================================
+DICA
+====================================================
+
+Carregue o Bootstrap no <head>:
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+Grid básico:
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4 bg-primary text-white p-3">Col 1</div>
+          <div class="col-md-4 bg-success text-white p-3">Col 2</div>
+          <div class="col-md-4 bg-danger text-white p-3">Col 3</div>
+      </div>
+  </div>
+
+Coluna que ocupa toda a linha no celular:
+  <div class="col-12 col-md-6">...</div>
+
+O sistema soma 12: col-md-4 + col-md-4 + col-md-4 = 12

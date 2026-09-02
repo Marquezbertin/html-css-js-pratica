@@ -1,0 +1,105 @@
+EXERCÍCIO 06 — Polish e Efeitos Visuais
+Dificuldade: ⭐⭐⭐⭐ Expert
+
+====================================================
+PROBLEMA
+====================================================
+
+Finalize o jogo com efeitos visuais, sons, tela inicial,
+instruções e todos os acabamentos para torná-lo completo
+e profissional.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Jogo Pong COMPLETO com:
+- Tela inicial com título e instruções
+- Começa ao pressionar Enter/espaço
+- Trail/estela da bola (rastro)
+- Partículas ao marcar ponto
+- Efeito de flash na tela ao quicar
+- Tela de pausa (Escape)
+- Placar estilizado
+- Som de quicada (usando AudioContext)
+- Tela de game over com opção de reiniciar
+- Tudo funcional e polido
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie tela inicial com instruções
+2. Adicione efeito de trail na bola
+3. Implemente partículas ao marcar ponto
+4. Adicione tela de pausa
+5. Implemente sons com Web Audio API
+
+====================================================
+DICA
+====================================================
+
+Trail da bola (guardar posições):
+  let trilha = [];
+  let trilhaMax = 10;
+
+  function atualizarTrilha() {
+      trilha.push({ x: bola.x, y: bola.y });
+      if (trilha.length > trilhaMax) {
+          trilha.shift();
+      }
+  }
+
+  function desenharTrilha() {
+      for (let i = 0; i < trilha.length; i++) {
+          let alpha = (i / trilha.length) * 0.5;
+          ctx.beginPath();
+          ctx.arc(trilha[i].x, trilha[i].y, bola.raio, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(255, 255, 255, " + alpha + ")";
+          ctx.fill();
+      }
+  }
+
+Partículas:
+  let particulas = [];
+
+  function criarParticulas(x, y) {
+      for (let i = 0; i < 20; i++) {
+          particulas.push({
+              x: x,
+              y: y,
+              velocidadeX: (Math.random() - 0.5) * 10,
+              velocidadeY: (Math.random() - 0.5) * 10,
+              vida: 1,
+              cor: Math.random() > 0.5 ? "#fff" : "#00f"
+          });
+      }
+  }
+
+  function atualizarParticulas() {
+      for (let i = particulas.length - 1; i >= 0; i--) {
+          let p = particulas[i];
+          p.x += p.velocidadeX;
+          p.y += p.velocidadeY;
+          p.vida -= 0.02;
+          if (p.vida <= 0) particulas.splice(i, 1);
+      }
+  }
+
+Som com Web Audio API:
+  function tocarSom(frequencia, duracao) {
+      let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      let osc = audioCtx.createOscillator();
+      let gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.frequency.value = frequencia;
+      osc.type = "square";
+      gain.gain.value = 0.1;
+      osc.start();
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duracao);
+      osc.stop(audioCtx.currentTime + duracao);
+  }
+
+  // Ao quicar: tocarSom(440, 0.1)
+  // Ao marcar ponto: tocarSom(880, 0.3)

@@ -1,0 +1,78 @@
+EXERCÍCIO 03 — Seção "Como Funciona"
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie a seção "Como Funciona" da landing page, mostrando o
+processo em 3 ou 4 passos com números e descrições visuais.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Seção com:
+- Título "Como Funciona"
+- 4 passos em sequência visual
+- Cada passo com número grande, título e descrição
+- Setas ou linhas conectando os passos
+- Layout horizontal em desktop, vertical em mobile
+- Fundo com tom levemente diferente (cinza claro)
+
+====================================================
+TAREFAS
+====================================================
+
+1. Adicione a seção ao index.html
+2. Crie 4 passos com números grandes (01, 02, 03, 04)
+3. Use flexbox para alinhar horizontalmente
+4. Adicione setas entre os passos (→ ou CSS)
+5. Torne responsivo (empilha em mobile)
+
+====================================================
+DICA
+====================================================
+
+Layout horizontal:
+  .passos {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 20px;
+  }
+
+  .passo {
+      text-align: center;
+      flex: 1;
+  }
+
+  .passo-numero {
+      font-size: 48px;
+      font-weight: bold;
+      color: var(--primary);
+  }
+
+Seta entre passos (desktop):
+  .passo:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -25px;
+      top: 30px;
+      font-size: 24px;
+      color: var(--gray);
+  }
+
+Responsivo:
+  @media (max-width: 768px) {
+      .passos {
+          flex-direction: column;
+      }
+      .passo:not(:last-child)::after {
+          content: "↓";
+          position: static;
+          display: block;
+          margin: 10px auto;
+      }
+  }

@@ -1,0 +1,57 @@
+EXERCÍCIO 03 — Grid de Cards
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um grid responsivo de cards de jogos usando CSS Grid. Os cards
+devem se adaptar automaticamente ao tamanho da tela.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Título centralizado "Catálogo de Jogos"
+- Grid de 6 cards de jogos
+- Cada card com imagem, nome do jogo e descrição
+- Grid que mostra 3 colunas em desktop e 1 coluna no celular
+- Espaçamento uniforme entre os cards
+- Cards com sombra e borda arredondada
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "grid_cards.html" com estrutura HTML5
+2. Use display: grid com grid-template-columns para o container
+3. Use repeat(auto-fit, minmax(300px, 1fr)) para responsividade
+4. Estilize cada card com fundo branco, padding, border-radius e box-shadow
+5. Adicione gap de 20px entre os cards
+
+====================================================
+DICA
+====================================================
+
+O segredo do grid responsivo sem media queries:
+  .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+  }
+
+Isso faz:
+- auto-fit: colunas automáticas
+- minmax(300px, 1fr): cada coluna tem no mínimo 300px
+- 1fr: distribui o espaço restante igualmente
+
+O grid se adapta sozinho! Menos de 300px = 1 coluna, etc.
+
+Para os cards:
+  .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }

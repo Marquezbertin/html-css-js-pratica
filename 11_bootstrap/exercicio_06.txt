@@ -1,0 +1,59 @@
+EXERCÍCIO 06 — Template Multi-Página
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um template de site completo com Bootstrap que tenha
+múltiplas seções funcionando como "páginas" (usando âncoras
+ou JavaScript para alternar entre elas).
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um site com:
+- Navbar que alterna entre seções: Início, Sobre, Projetos, Contato
+- Seção "Início" com hero e destaque
+- Seção "Sobre" com bio e habilidades (barras de progresso)
+- Seção "Projetos" com grid de cards de projetos
+- Seção "Contato" com formulário funcional
+- Transições suaves entre seções
+- Botão "Voltar ao topo"
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "template.html" com Bootstrap via CDN
+2. Crie 4 seções visíveis/ocultas com JavaScript
+3. Use Navbar links para alternar entre seções
+4. Adicione barra de progresso para habilidades (barras Bootstrap)
+5. Implemente botão "voltar ao topo" com scroll
+
+====================================================
+DICA
+====================================================
+
+Estrutura com seções:
+  <section id="inicio" class="secao">...</section>
+  <section id="sobre" class="secao d-none">...</section>
+  <section id="projetos" class="secao d-none">...</section>
+  <section id="contato" class="secao d-none">...</section>
+
+JavaScript para alternar:
+  document.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", function(e) {
+          e.preventDefault();
+          let target = this.getAttribute("href").substring(1);
+          document.querySelectorAll(".secao").forEach(s => s.classList.add("d-none"));
+          document.getElementById(target).classList.remove("d-none");
+          window.scrollTo(0, 0);
+      });
+  });
+
+Barra de progresso Bootstrap:
+  <div class="progress mb-2">
+      <div class="progress-bar bg-success" style="width: 85%">HTML 85%</div>
+  </div>

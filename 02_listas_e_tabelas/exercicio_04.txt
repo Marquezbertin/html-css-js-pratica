@@ -1,0 +1,48 @@
+EXERCÍCIO 04 — Tabela de Games
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Você é dono de uma loja virtual de games e precisa criar uma tabela
+com todos os jogos disponíveis, mostrando nome, plataforma, preço,
+nota da comunidade e disponibilidade.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Título "GameStore — Catálogo de Jogos"
+- Tabela com 8 jogos diferentes
+- Colunas: Jogo, Plataforma, Preço, Nota, Disponível
+- Pelo menos 3 plataformas diferentes (PC, PS5, Xbox, Switch)
+- Jogos com preço variando de R$50 a R$300
+- Alguns jogos "Indisponível" e outros "Disponível"
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie o arquivo "catalogo.html" com estrutura HTML5
+2. Crie a tabela com cabeçalho usando <thead> e <tbody>
+3. Adicione 8 linhas com diferentes jogos
+4. Use rodapé da tabela (<tfoot>) com o preço médio total
+5. Adicione subtítulo antes da tabela e parágrafo explicativo depois
+
+====================================================
+DICA
+====================================================
+
+Use <tfoot> para criar um rodapé na tabela:
+  <tfoot>
+      <tr>
+          <td colspan="3">Preço Médio</td>
+          <td>R$ 175,00</td>
+          <td>—</td>
+      </tr>
+  </tfoot>
+
+O atributo colspan faz uma célula ocupar várias colunas.
+Dica: preencha com jogos que você conhece para ficar mais divertido!

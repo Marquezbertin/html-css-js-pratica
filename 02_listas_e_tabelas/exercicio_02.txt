@@ -1,0 +1,42 @@
+EXERCÍCIO 02 — Ranking e Lista Ordenada
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Você quer criar um ranking dos seus 5 jogos favoritos de todos os
+tempos, do #1 ao #5. A ordem é muito importante porque mostra sua
+preferência!
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Título "Meus 5 Jogos Favoritos"
+- Uma lista numerada (ol) com os 5 jogos
+- Cada jogo deve ter nome e uma frase explicando por que é favorito
+- Uma seção "Menções Honrosas" com uma lista não ordenada de mais 3 jogos
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie o arquivo "ranking.html" com estrutura HTML5
+2. Use <ol> para a lista ordenada dos top 5 jogos
+3. Dentro de cada <li>, coloque o nome em negrito e a descrição
+4. Crie uma segunda seção com <ul> para menções honrosas
+5. Adicione um parágrafo explicando seus critérios de escolha
+
+====================================================
+DICA
+====================================================
+
+Dentro de um <li> você pode colocar outros elementos:
+  <ol>
+      <li><strong>Minecraft</strong> — O jogo mais criativo que já joguei.</li>
+      <li><strong>Fortnite</strong> — Sempre me diverte com meus amigos.</li>
+  </ol>
+
+Use <strong> para destacar o nome de cada jogo.

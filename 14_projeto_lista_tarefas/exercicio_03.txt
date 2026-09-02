@@ -1,0 +1,72 @@
+EXERCÍCIO 03 — Concluir e Remover Tarefas
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Implemente as funcionalidades de marcar tarefa como concluída
+(checkbox) e remover tarefa da lista.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Funcionalidades:
+- Checkbox marca/desmarca tarefa como concluída
+- Tarefa concluída tem texto riscado e opacidade reduzida
+- Botão X remove a tarefa da lista
+- Animação ao remover (fade out)
+- Contador de tarefas ativas atualiza em tempo real
+- Dados do array são atualizados corretamente
+
+====================================================
+TAREFAS
+====================================================
+
+1. Implemente função toggle(id) para marcar/desmarcar
+2. Implemente função remover(id) para deletar tarefa
+3. Atualize o array quando uma ação é feita
+4. Adicione classe CSS para tarefa concluída
+5. Atualize o contador de tarefas ativas
+
+====================================================
+DICA
+====================================================
+
+Toggle (marcar/desmarcar):
+  function toggle(id) {
+      let tarefa = tarefas.find(t => t.id === id);
+      tarefa.concluida = !tarefa.concluida;
+      renderizar();
+  }
+
+Remover:
+  function remover(id) {
+      tarefas = tarefas.filter(t => t.id !== id);
+      renderizar();
+  }
+
+Na renderização, marque o checkbox e aplique classe:
+  function renderizar() {
+      let html = "";
+      for (let t of tarefas) {
+          let classe = t.concluida ? "tarefa concluida" : "tarefa";
+          html += '<li class="' + classe + '">';
+          html += '<input type="checkbox" ' +
+                  (t.concluida ? 'checked' : '') +
+                  ' onchange="toggle(' + t.id + ')">';
+          html += '<span>' + t.texto + '</span>';
+          html += '<button onclick="remover(' + t.id + ')">×</button>';
+          html += '</li>';
+      }
+      document.getElementById("lista").innerHTML = html;
+      atualizarContador();
+  }
+
+Contador:
+  function atualizarContador() {
+      let ativas = tarefas.filter(t => !t.concluida).length;
+      document.getElementById("contador").innerText =
+          ativas + " tarefa" + (ativas !== 1 ? "s" : "") + " ativa" + (ativas !== 1 ? "s" : "");
+  }

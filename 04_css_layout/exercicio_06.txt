@@ -1,0 +1,61 @@
+EXERCÍCIO 06 — Dashboard Responsivo
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um painel (dashboard) estilo aplicativo real, com sidebar,
+área principal com cards de estatísticas e uma tabela de dados.
+O layout deve ser completamente responsivo.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um dashboard com:
+- Sidebar com menu de navegação (esconde no celular)
+- Área principal com 4 cards de estatísticas (receitas, vendas, etc.)
+- Seção com gráfico placeholder
+- Tabela de dados recentes
+- Header com título e busca
+- No celular: sidebar some e conteúdo ocupa 100%
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "dashboard.html" com estrutura HTML5
+2. Use Grid para o layout principal (sidebar + conteúdo)
+3. A sidebar deve ter 250px de largura no desktop e none no celular
+4. Os 4 cards de stats devem usar Grid responsivo (4→2→1 colunas)
+5. Adicione media query para esconder sidebar abaixo de 768px
+
+====================================================
+DICA
+====================================================
+
+Layout principal com Grid:
+  .dashboard {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+  }
+
+  @media (max-width: 768px) {
+      .dashboard {
+          grid-template-columns: 1fr;
+      }
+      .sidebar {
+          display: none;
+      }
+  }
+
+Cards de estatísticas:
+  .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+  }
+
+Este é o projeto mais desafiador do módulo. Pense em como
+dashboards reais funcionam (Google Analytics, GitHub, etc.)

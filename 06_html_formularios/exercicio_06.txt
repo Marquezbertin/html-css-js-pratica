@@ -1,0 +1,61 @@
+EXERCÍCIO 06 — Formulário Multi-Step
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um formulário de cadastro multi-step (várias páginas/etapas),
+onde o usuário preenche os dados em 3 etapas e pode navegar entre
+elas. Cada etapa tem um conjunto diferente de campos.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um formulário em 3 etapas com:
+- Etapa 1: Dados pessoais (nome, e-mail, telefone)
+- Etapa 2: Endereço (CEP, rua, bairro, cidade, estado)
+- Etapa 3: Confirmação e envio
+- Indicador visual de progresso (1/2/3 ou barra)
+- Botões "Próximo" e "Anterior"
+- Layout limpo e profissional
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "multistep.html" com estrutura HTML5 completa
+2. Crie 3 seções (divs) representando cada etapa
+3. Use CSS para mostrar apenas a etapa atual
+4. Crie um indicador visual de progresso
+5. Estilize botões de navegação e campos
+
+====================================================
+DICA
+====================================================
+
+Para esconder etapas, use display: none na etapa inativa:
+  .etapa { display: none; }
+  .etapa.ativa { display: block; }
+
+Estrutura HTML:
+  <div class="progresso">
+      <span class="ativo">1</span>
+      <span>2</span>
+      <span>3</span>
+  </div>
+
+  <div class="etapa ativa" id="etapa1">
+      <!-- Campos da etapa 1 -->
+      <button onclick="proximaEtapa(2)">Próximo</button>
+  </div>
+
+  <div class="etapa" id="etapa2">
+      <!-- Campos da etapa 2 -->
+      <button onclick="proximaEtapa(1)">Anterior</button>
+      <button onclick="proximaEtapa(3)">Próximo</button>
+  </div>
+
+Para alternar etapas, precisaremos de JavaScript (módulo 07+).
+Por enquanto, crie a estrutura visual completa com todas as 3 etapas.

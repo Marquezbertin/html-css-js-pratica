@@ -1,0 +1,86 @@
+EXERCÍCIO 04 — Depoimentos + Preços
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie duas seções da landing page: Depoimentos (prova social)
+e Tabela de Preços (conversão). Ambas são essenciais para
+uma landing page eficaz.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Seção de Depoimentos:
+- Título "O que dizem sobre nós"
+- 3 cards de depoimento
+- Cada um com foto, nome, cargo e texto
+- Aspas estilizadas
+- Fundo escuro
+
+Seção de Preços:
+- Título "Planos e Preços"
+- 3 cards de planos (Básico, Pro, Premium)
+- O plano "Pro" destacado como "Mais Popular"
+- Lista de features com checkmarks
+- Preço grande e destaque
+- Botão "Escolher Plano"
+
+====================================================
+TAREFAS
+====================================================
+
+1. Adicione seção de depoimentos ao index.html
+2. Adicione seção de preços ao index.html
+3. Use grid responsivo para ambos
+4. Destaque o plano do meio com borda/cor diferente
+5. Use ícones ✓ para features incluídas
+
+====================================================
+DICA
+====================================================
+
+Card de depoimento:
+  .depoimento {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+  }
+  .depoimento::before {
+      content: """;
+      font-size: 60px;
+      color: var(--primary);
+      line-height: 1;
+  }
+
+Card de preço destacado:
+  .plano-popular {
+      border: 3px solid var(--primary);
+      transform: scale(1.05);
+      position: relative;
+  }
+  .plano-popular::before {
+      content: "Mais Popular";
+      position: absolute;
+      top: -12px;
+      background: var(--primary);
+      color: white;
+      padding: 4px 15px;
+      border-radius: 20px;
+      font-size: 12px;
+  }
+
+Lista de features:
+  .feature-list {
+      list-style: none;
+      padding: 0;
+  }
+  .feature-list li::before {
+      content: "✓ ";
+      color: green;
+      font-weight: bold;
+  }

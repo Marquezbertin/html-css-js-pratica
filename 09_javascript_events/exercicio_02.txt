@@ -1,0 +1,60 @@
+EXERCÍCIO 02 — Validação em Tempo Real
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um formulário de cadastro com validação visual em tempo real.
+Cada campo mostra se está válido ou inválido conforme o usuário
+digita, usando eventos de input e change.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um formulário com:
+- Campo nome: mínimo 3 caracteres, borda verde se válido
+- Campo e-mail: formato válido, borda verde/vermelha
+- Campo senha: mínimo 8 caracteres, indicador de força
+- Campo confirmar senha: deve coincidir com a senha
+- Mensagem de erro/êxito abaixo de cada campo
+- Botão "Cadastrar" só fica ativo quando tudo é válido
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "validacao_tempo_real.html" com estrutura HTML5
+2. Adicione evento "input" em cada campo
+3. Valide dados a cada mudança e atualize visualmente
+4. Mostre mensagens de erro/êxito em tempo real
+5. Habilite/desabilite o botão conforme validação
+
+====================================================
+DICA
+====================================================
+
+Validação de e-mail:
+  function validarEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+Mudar visual:
+  function mostrarErro(campo, mensagem) {
+      campo.style.borderColor = "red";
+      campo.nextElementSibling.innerText = mensagem;
+      campo.nextElementSibling.style.color = "red";
+  }
+
+  function mostrarSucesso(campo) {
+      campo.style.borderColor = "green";
+      campo.nextElementSibling.innerText = "✓ Válido";
+      campo.nextElementSibling.style.color = "green";
+  }
+
+Verificar tudo para habilitar botão:
+  function verificarFormulario() {
+      let valido = nomeValido && emailValido && senhaValida && confirmacaoValida;
+      document.getElementById("btnCadastrar").disabled = !valido;
+  }

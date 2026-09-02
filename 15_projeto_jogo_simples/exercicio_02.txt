@@ -1,0 +1,72 @@
+EXERCÍCIO 02 — Raquetes e Controles
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Implemente o movimento das raquetes usando as teclas do teclado.
+O jogador controla a raquete esquerda com W/S, e a raquete
+direita com as setas.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Funcionalidades:
+- Raquete esquerda: W (cima) e S (baixo)
+- Raquete direita: Seta para cima e seta para baixo
+- Raquetes não saem da tela (limites)
+- Movimento suave e responsivo
+- Velocidade ajustável
+
+====================================================
+TAREFAS
+====================================================
+
+1. Adicione eventos keydown e keyup no document
+2. Crie objeto teclas{} para rastrear teclas pressionadas
+3. Atualize posição das raquetes no game loop
+4. Adicione limites da tela (não sair do canvas)
+5. Ajuste velocidade do movimento
+
+====================================================
+DICA
+====================================================
+
+Rastrear teclas:
+  let teclas = {};
+  let velocidadeRaquete = 6;
+
+  document.addEventListener("keydown", (e) => {
+      teclas[e.key] = true;
+  });
+  document.addEventListener("keyup", (e) => {
+      teclas[e.key] = false;
+  });
+
+Atualizar no game loop:
+  function atualizar() {
+      // Raquete esquerda (W/S)
+      if (teclas["w"] || teclas["W"]) {
+          raqueteEsquerda.y -= velocidadeRaquete;
+      }
+      if (teclas["s"] || teclas["S"]) {
+          raqueteEsquerda.y += velocidadeRaquete;
+      }
+
+      // Raquete direita (Setas)
+      if (teclas["ArrowUp"]) {
+          raqueteDireita.y -= velocidadeRaquete;
+      }
+      if (teclas["ArrowDown"]) {
+          raqueteDireita.y += velocidadeRaquete;
+      }
+
+      // Limites
+      if (raqueteEsquerda.y < 0) raqueteEsquerda.y = 0;
+      if (raqueteEsquerda.y + raqueteEsquerda.altura > canvas.height) {
+          raqueteEsquerda.y = canvas.height - raqueteEsquerda.altura;
+      }
+      // Mesmo para a raquete direita
+  }

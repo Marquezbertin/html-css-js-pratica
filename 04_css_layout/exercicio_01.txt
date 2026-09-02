@@ -1,0 +1,52 @@
+EXERCÍCIO 01 — Flexbox Básico
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma página que demonstre os conceitos básicos do Flexbox:
+alinhamento, espaçamento e direção dos elementos.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Seção 1: 3 caixas coloridas centralizadas com justify-content: center
+- Seção 2: 3 caixas com espaço igual entre elas (space-between)
+- Seção 3: 3 caixas empilhadas verticalmente (flex-direction: column)
+- Seção 4: 3 caixas alinhadas ao fundo (align-items: flex-end)
+- Rótulo explicativo em cada seção
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "flexbox_basico.html" com estrutura HTML5
+2. Crie 4 containers Flexbox com display: flex
+3. Adicione 3 caixas coloridas em cada container
+4. Use justify-content: center na seção 1
+5. Use justify-content: space-between na seção 2
+
+====================================================
+DICA
+====================================================
+
+Justify-content controla o eixo PRINCIPAL (horizontal por padrão):
+  .container {
+      display: flex;
+      justify-content: center; /* ou space-between, space-around */
+  }
+
+Align-items controla o eixo TRANSVERSAL (vertical por padrão):
+  .container {
+      display: flex;
+      align-items: flex-end; /* ou center, flex-start */
+  }
+
+Flex-direction muda a direção:
+  .container {
+      display: flex;
+      flex-direction: column; /* empilha verticalmente */
+  }

@@ -1,0 +1,53 @@
+EXERCÍCIO 03 — Box Model na Prática
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma página com 3 caixas coloridas que demonstram como
+funciona o Box Model (margin, border, padding). Cada caixa deve
+ter valores diferentes de padding, border e margin para mostrar
+a diferença visual.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com 3 caixas empilhadas:
+- Caixa 1: padding pequeno, sem borda, margin pequena
+- Caixa 2: padding médio, borda grossa, margin média
+- Caixa 3: padding grande, borda dupla, margin grande
+- Cada caixa com uma cor de fundo diferente
+- Texto dentro de cada caixa explicando as medidas
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "boxmodel.html" com estrutura HTML5
+2. Crie 3 divs com classes .caixa1, .caixa2, .caixa3
+3. Para cada caixa, defina padding, border e margin diferentes
+4. Use cores de fundo diferentes para cada caixa
+5. Adicione texto dentro de cada caixa mostrando as medidas
+
+====================================================
+DICA
+====================================================
+
+Box model em ação:
+  .caixa1 {
+      padding: 10px;          /* Espaço interno */
+      border: 1px solid gray;  /* Borda */
+      margin: 5px;             /* Espaço externo */
+      background-color: #ffe0e0;
+  }
+
+  .caixa2 {
+      padding: 20px;
+      border: 4px solid blue;
+      margin: 15px;
+      background-color: #e0e0ff;
+  }
+
+Use width: 300px para manter todas com a mesma largura.

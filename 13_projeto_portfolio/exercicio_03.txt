@@ -1,0 +1,83 @@
+EXERCÍCIO 03 — Grid de Projetos
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie a seção de projetos do portfólio com um grid responsivo
+de cards, cada um com imagem, título, descrição e links.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Seção de projetos com:
+- Título "Meus Projetos"
+- Filtros: Todos, HTML/CSS, JavaScript, React
+- Grid responsivo com 6 projetos
+- Cada card com imagem (picsum), título, tech tags e links
+- Hover effect com overlay escuro e links
+- Animação de entrada ao scroll
+
+====================================================
+TAREFAS
+====================================================
+
+1. Adicione seção "Projetos" ao index.html
+2. Crie grid responsivo com CSS Grid
+3. Crie 6 cards com dados fictícios
+4. Adicione hover overlay com links
+5. Implemente filtros por tecnologia com JavaScript
+
+====================================================
+DICA
+====================================================
+
+Grid responsivo:
+  .projetos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+  }
+
+Card com overlay:
+  .projeto-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+  }
+  .projeto-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.3s;
+  }
+  .projeto-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+  }
+  .projeto-card:hover .projeto-overlay {
+      opacity: 1;
+  }
+  .projeto-card:hover img {
+      transform: scale(1.05);
+  }
+
+Filtros com JavaScript:
+  function filtrarProjeto(categoria) {
+      document.querySelectorAll(".projeto-card").forEach(card => {
+          if (categoria === "todos" || card.dataset.categoria === categoria) {
+              card.style.display = "block";
+          } else {
+              card.style.display = "none";
+          }
+      });
+  }

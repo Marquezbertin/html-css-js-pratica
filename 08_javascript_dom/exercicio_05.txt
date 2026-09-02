@@ -1,0 +1,80 @@
+EXERCÍCIO 05 — Contador Interativo
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um contador interativo com botões +/-, campo de input para
+definir valor manualmente, ebotão de reset. O contador deve ter
+limites mínimos e máximos e efeitos visuais ao mudar.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um contador com:
+- Número grande centralizado
+- Botão - (menos) e + (mais)
+- Input para digitar valor diretamente
+- Botão Reset
+- Limite mínimo (0) e máximo (100)
+- Cor muda: verde (>50), amarelo (25-50), vermelho (<25)
+- Animação de pulso ao incrementar
+- Histórico das últimas 5 ações
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "contador.html" com estrutura HTML5 completa
+2. Crie variável contador com valor inicial 0
+3. Funções: incrementar(), decrementar(), resetar(), setValor()
+4. Use style para mudar cor conforme valor
+5. Registre ações em um array e exiba o histórico
+
+====================================================
+DICA
+====================================================
+
+Variável e funções:
+  let contador = 0;
+
+  function incrementar() {
+      if (contador < 100) {
+          contador++;
+          atualizar();
+      }
+  }
+
+  function decrementar() {
+      if (contador > 0) {
+          contador--;
+          atualizar();
+      }
+  }
+
+  function resetar() {
+      contador = 0;
+      atualizar();
+  }
+
+  function atualizar() {
+      document.getElementById("numero").innerText = contador;
+      let el = document.getElementById("numero");
+      el.classList.add("pulso");
+      setTimeout(() => el.classList.remove("pulso"), 300);
+
+      // Mudar cor
+      if (contador > 50) el.style.color = "green";
+      else if (contador > 25) el.style.color = "orange";
+      else el.style.color = "red";
+  }
+
+Animação de pulso (CSS):
+  @keyframes pulso {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+  }
+  .pulso { animation: pulso 0.3s ease; }

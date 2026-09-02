@@ -1,0 +1,92 @@
+EXERCÍCIO 06 — Funcionalidades Extras
+Dificuldade: ⭐⭐⭐⭐ Expert
+
+====================================================
+PROBLEMA
+====================================================
+
+Adicione funcionalidades avançadas ao Todo App para torná-lo
+um aplicativo completo e profissional.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Funcionalidades extras:
+- Editar tarefa com duplo clique (texto vira input)
+- Definir prioridade (baixa, média, alta) com cores
+- Data de criação exibida em cada tarefa
+- Busca/filtro por texto
+- Reordenação com drag and drop
+- Modo claro/escuro
+- Tema salvo no localStorage
+- Contador total por status
+
+====================================================
+TAREFAS
+====================================================
+
+1. Implemente edição inline com duplo clique
+2. Adicione seletor de prioridade em cada tarefa
+3. Implemente busca por texto
+4. Adicione toggle de tema claro/escuro
+5. Adicione drag and drop para reordenar
+
+====================================================
+DICA
+====================================================
+
+Edição inline:
+  function editar(id) {
+      let tarefa = tarefas.find(t => t.id === id);
+      let li = document.querySelector('[data-id="' + id + '"]');
+      let span = li.querySelector("span");
+      let textoAtual = span.innerText;
+
+      let input = document.createElement("input");
+      input.type = "text";
+      input.value = textoAtual;
+      input.className = "input-edicao";
+
+      span.replaceWith(input);
+      input.focus();
+
+      function salvar() {
+          let novoTexto = input.value.trim();
+          if (novoTexto) {
+              tarefa.texto = novoTexto;
+          }
+          renderizar();
+      }
+
+      input.addEventListener("blur", salvar);
+      input.addEventListener("keypress", function(e) {
+          if (e.key === "Enter") salvar();
+      });
+  }
+
+Prioridade:
+  function adicionarTarefaComPrioridade(texto, prioridade) {
+      tarefas.push({
+          id: proximoId++,
+          texto: texto,
+          concluida: false,
+          prioridade: prioridade,
+          criadaEm: new Date().toLocaleDateString("pt-BR")
+      });
+  }
+
+Busca:
+  function buscar(termo) {
+      return tarefas.filter(t =>
+          t.texto.toLowerCase().includes(termo.toLowerCase())
+      );
+  }
+
+Toggle tema:
+  function toggleTema() {
+      document.body.classList.toggle("light");
+      localStorage.setItem("tema",
+          document.body.classList.contains("light") ? "light" : "dark"
+      );
+  }

@@ -1,0 +1,82 @@
+EXERCÍCIO 06 — Carrossel Interativo
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um carrossel de imagens com navegação por botões, indicadores
+e avanço automático. O carrossel deve ser completamente funcional
+e responsivo.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um carrossel com:
+- Imagens grandes (use picsum.photos)
+- Botões anterior/proximo
+- Indicadores (bolinhas) clicáveis
+- Avanço automático a cada 3 segundos
+- Pausa ao passar o mouse
+- Transição suave entre slides
+- Contador "1 de 5"
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "carrossel.html" com estrutura HTML5 completa
+2. Crie array com URLs de 5 imagens
+3. Implemente navegação prev/next
+4. Implemente avanço automático com setInterval
+5. Implemente pause no mouseenter e resume no mouseleave
+
+====================================================
+DICA
+====================================================
+
+Estrutura do carrossel:
+  <div class="carrossel">
+      <div class="slides">
+          <img src="..." class="slide">
+          <img src="..." class="slide">
+      </div>
+      <button class="prev">←</button>
+      <button class="next">→</button>
+      <div class="indicadores">
+          <span class="dot ativo" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+      </div>
+  </div>
+
+Lógica de navegação:
+  let slideAtual = 0;
+  let totalSlides = 5;
+
+  function mostrarSlide(index) {
+      slideAtual = index;
+      let offset = -index * 100;
+      document.querySelector(".slides").style.transform =
+          "translateX(" + offset + "%)";
+      atualizarIndicadores();
+  }
+
+  function proximo() {
+      slideAtual = (slideAtual + 1) % totalSlides;
+      mostrarSlide(slideAtual);
+  }
+
+  function anterior() {
+      slideAtual = (slideAtual - 1 + totalSlides) % totalSlides;
+      mostrarSlide(slideAtual);
+  }
+
+Auto-play:
+  let intervalo = setInterval(proximo, 3000);
+
+Pausar:
+  carrossel.addEventListener("mouseenter", () => clearInterval(intervalo));
+  carrossel.addEventListener("mouseleave", () => {
+      intervalo = setInterval(proximo, 3000);
+  });

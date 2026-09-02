@@ -1,0 +1,64 @@
+EXERCÍCIO 01 — setTimeout e setInterval
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um cronômetro digital que conta segundos, com botões
+para iniciar, pausar e resetar. Use setInterval para
+atualizar o tempo a cada segundo.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um cronômetro com:
+- Display mostrando MM:SS (minutos:segundos)
+- Botão "Iniciar" que começa a contar
+- Botão "Pausar" que pausa
+- Botão "Resetar" que volta para 00:00
+- Cor muda quando está rodando (verde) vs pausado (vermelho)
+- Botão de volta (lap) que registra tempos parciais
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "cronometro.html" com estrutura HTML5
+2. Use setInterval para incrementar tempo a cada 1000ms
+3. Use clearInterval para pausar
+4. Formate o tempo como MM:SS
+5. Registre voltas em um array e exiba abaixo
+
+====================================================
+DICA
+====================================================
+
+Variáveis de controle:
+  let segundos = 0;
+  let intervalo = null;
+  let rodando = false;
+
+Iniciar:
+  function iniciar() {
+      if (rodando) return;
+      rodando = true;
+      intervalo = setInterval(function() {
+          segundos++;
+          atualizarDisplay();
+      }, 1000);
+  }
+
+Pausar:
+  function pausar() {
+      clearInterval(intervalo);
+      rodando = false;
+  }
+
+Formatar tempo:
+  function formatar(totalSegundos) {
+      let min = Math.floor(totalSegundos / 60);
+      let seg = totalSegundos % 60;
+      return (min < 10 ? "0" : "") + min + ":" + (seg < 10 ? "0" : "") + seg;
+  }

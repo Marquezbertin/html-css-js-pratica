@@ -1,0 +1,68 @@
+EXERCÍCIO 04 — Modo Escuro/Claro
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um site completo com alternância entre modo claro e modo
+escuro. O tema deve persistir enquanto o usuário navega e a
+transição deve ser suave.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um site com:
+- Botão toggle no header para mudar tema
+- Fundo branco/texto escuro (claro) → Fundo escuro/texto claro
+- Cards e elementos se adaptam ao tema
+- Transição suave de 0.3s
+- Ícone de sol/lua no botão
+- Tema salvo no localStorage (persiste ao recarregar)
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "tema.html" com estrutura HTML5 completa
+2. Crie classes .claro e .escuro no CSS
+3. Use classList.toggle no body para alternar
+4. Use localStorage para salvar a preferência
+5. Use CSS transitions para mudança suave
+
+====================================================
+DICA
+====================================================
+
+CSS com variáveis:
+  :root {
+      --bg: #ffffff;
+      --text: #333333;
+      --card-bg: #f5f5f5;
+  }
+  .escuro {
+      --bg: #1a1a2e;
+      --text: #ffffff;
+      --card-bg: #16213e;
+  }
+  body {
+      background: var(--bg);
+      color: var(--text);
+      transition: all 0.3s ease;
+  }
+
+JavaScript toggle:
+  function toggleTheme() {
+      document.body.classList.toggle("escuro");
+      let isDark = document.body.classList.contains("escuro");
+      localStorage.setItem("tema", isDark ? "escuro" : "claro");
+  }
+
+Carregar tema salvo:
+  window.onload = function() {
+      let tema = localStorage.getItem("tema");
+      if (tema === "escuro") {
+          document.body.classList.add("escuro");
+      }
+  }

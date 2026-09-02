@@ -1,0 +1,47 @@
+EXERCÍCIO 04 — Display e Alinhamento
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma página que mostre a diferença entre display block, inline,
+inline-block e none. Isso é fundamental para entender como os
+elementos se comportam na página.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Seção 1: 3 blocos <div> empilhados (display: block, padrão)
+- Seção 2: 3 spans lado a lado (display: inline)
+- Seção 3: 3 spans lado a lado com tamanho definido (display: inline-block)
+- Seção 4: 1 elemento escondido (display: none) com explicação
+- Texto explicativo em cada seção
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "display.html" com estrutura HTML5
+2. Na seção 1, crie 3 divs com fundo colorido (empilham naturalmente)
+3. Na seção 2, crie 3 spans inline (ficam lado a lado)
+4. Na seção 3, crie 3 spans com display: inline-block e width definida
+5. Na seção 4, crie um elemento com display: none e comente por que some
+
+====================================================
+DICA
+====================================================
+
+block: ocupa a linha inteira, quebra linha
+  div { display: block; background: lightblue; }
+
+inline: só ocupa o espaço do texto, não aceita width/height
+  span { display: inline; background: lightgreen; }
+
+inline-block: como inline, mas aceita width/height
+  span { display: inline-block; width: 100px; background: lightyellow; }
+
+none: some completamente da página
+  .escondido { display: none; }

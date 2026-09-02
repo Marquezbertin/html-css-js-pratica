@@ -1,0 +1,73 @@
+EXERCÍCIO 01 — Navbar + Hero Section
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Inicie o projeto da Landing Page criando a navbar fixa no topo
+e a hero section (seção principal com destaque e botão CTA).
+Esta é a primeira impressão do visitante.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Navbar + Hero com:
+- Navbar fixa no topo, com fundo transparente que vira sólido ao rolar
+- Logo à esquerda, links à direita (Início, Recursos, Preços, FAQ)
+- Hero com título grande "Crie Sites Incríveis"
+- Subtítulo motivacional
+- Botão CTA grande e colorido
+- Fundo com gradiente (azul → roxo)
+- Totalmente responsivo
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "index.html" com estrutura HTML5 completa
+2. Crie "styles.css" com CSS separado
+3. Implemente navbar com position: fixed
+4. Crie hero section com flexbox centralizado
+5. Adicione gradiente no fundo da hero
+
+====================================================
+DICA
+====================================================
+
+Navbar fixa:
+  nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: transparent;
+      transition: background 0.3s;
+  }
+  nav.scrolled {
+      background: rgba(26, 32, 44, 0.95);
+  }
+
+Hero com Flexbox:
+  .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 20px;
+  }
+
+JavaScript para navbar ao rolar:
+  window.addEventListener("scroll", function() {
+      let nav = document.querySelector("nav");
+      if (window.scrollY > 50) {
+          nav.classList.add("scrolled");
+      } else {
+          nav.classList.remove("scrolled");
+      }
+  });

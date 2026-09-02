@@ -1,0 +1,67 @@
+EXERCÍCIO 03 — Animações com Keyframes
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma página que demonstre diferentes animações CSS usando
+@keyframes: rotação, flutuação, pulsar e loading spinner.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com 4 elementos animados:
+- Elemento 1: rotação contínua (360°)
+- Elemento 2: flutuação suave (sobe e desce)
+- Elemento 3: pulsar (aumenta e diminui)
+- Elemento 4: loading spinner (arco que gira)
+- Cada animação deve ser contínua (infinite)
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "animacoes.html" com estrutura HTML5
+2. Defina 4 @keyframes diferentes
+3. Aplique as animações com animation: nome duracao easing infinite
+4. Use pelo menos 3 valores de transform (rotate, translateY, scale)
+5. Adicione rótulos explicativos em cada animação
+
+====================================================
+DICA
+====================================================
+
+Rotação contínua:
+  @keyframes girar {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+  }
+  .girar { animation: girar 2s linear infinite; }
+
+Flutuação:
+  @keyframes flutuar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+  }
+  .flutuar { animation: flutuar 2s ease-in-out infinite; }
+
+Pulsar:
+  @keyframes pulsar {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+  }
+  .pulsar { animation: pulsar 1.5s ease-in-out infinite; }
+
+Loading spinner (use borda):
+  @keyframes girar-spinner {
+      to { transform: rotate(360deg); }
+  }
+  .spinner {
+      width: 40px; height: 40px;
+      border: 4px solid #ddd;
+      border-top: 4px solid #333;
+      border-radius: 50%;
+      animation: girar-spinner 1s linear infinite;
+  }

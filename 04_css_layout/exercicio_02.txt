@@ -1,0 +1,65 @@
+EXERCÍCIO 02 — Navbar com Flexbox
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma barra de navegação (navbar) profissional usando Flexbox,
+com logo à esquerda e links à direita, exatamente como sites reais.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma navbar com fundo escuro contendo:
+- Logo/nome do site à esquerda
+- Links de navegação à direita: Início, Sobre, Projetos, Contato
+- Hover nos links (mudar cor quando passa o mouse)
+- Navbar responsiva que funciona em telas menores
+- Espaçamento uniforme e alinhamento perfeito
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "navbar.html" com estrutura HTML5
+2. Crie uma tag <nav> com display: flex
+3. Adicione um <div> para o logo e um <div> para os links
+4. Use justify-content: space-between para separar logo e links
+5. Adicione :hover nos links para mudar a cor
+
+====================================================
+DICA
+====================================================
+
+Estrutura do HTML:
+  <nav>
+      <div class="logo">MeuSite</div>
+      <div class="links">
+          <a href="#">Início</a>
+          <a href="#">Sobre</a>
+          <a href="#">Projetos</a>
+          <a href="#">Contato</a>
+      </div>
+  </nav>
+
+CSS da navbar:
+  nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #1a1a2e;
+  }
+
+  .links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.3s;
+  }
+
+  .links a:hover {
+      color: #0077ff;
+  }

@@ -1,0 +1,48 @@
+EXERCÍCIO 06 — Página Completa Pessoal
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Hora de criar sua primeira página web completa sobre VOCÊ! Esta página
+será como uma "carta de apresentação" na internet, com informações
+sobre quem você é, o que gosta e seus objetivos.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página completa e organizada com:
+- Título com seu nome
+- Seção "Sobre Mim" com foto e parágrafo sobre você
+- Seção "Meus Hobbies" com seus hobbies descritos
+- Seção "Músicas que Estou Ouvido" com 3 links para músicas no YouTube
+- Seção "Filmes/Séries Favoritos" com títulos e breve descrição
+- Seção "Onde Me Encontrar" com links para suas redes sociais
+- Rodapé com mensagem final
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie o arquivo "sobre_mim.html" com toda a estrutura HTML5
+2. Use no mínimo 3 níveis de títulos (h1, h2, h3)
+3. Adicione pelo menos 1 imagem sua ou que te represente
+4. Crie links internos que apontem para âncoras na mesma página
+5. Adicione pelo menos 8 links para sites externos ao todo
+
+====================================================
+DICA
+====================================================
+
+Para criar links internos (âncoras), adicione id nas seções:
+  <h2 id="hobbies">Meus Hobbies</h2>
+  ...
+  <a href="#hobbies">Ir para Meus Hobbies</a>
+
+Para links de âncora no YouTube, copie o link de qualquer vídeo.
+Exemplo: https://www.youtube.com/watch?v=ABC123
+
+Este exercício é um resumo de tudo que aprendeu no módulo!
+Parabéns se chegou até aqui! 🎉

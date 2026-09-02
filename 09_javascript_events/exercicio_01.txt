@@ -1,0 +1,66 @@
+EXERCÍCIO 01 — Eventos de Clique e Teclado
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma página que responda a diferentes eventos de clique e
+teclado. O usuário interage com a página de várias formas e
+cada interação produz um resultado diferente.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Botão que muda de cor a cada clique
+- Área que muda de cor quando o mouse passa por cima
+- Input que detecta quando algo é digitado (em tempo real)
+- Parágrafo que reage a teclas específicas (Enter, Espaço, Escape)
+- Contador de quantas vezes cada botão foi clicado
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "eventos_basicos.html" com estrutura HTML5
+2. Adicione click em um botão usando addEventListener
+3. Adicione mouseenter/mouseleave em uma área
+4. Adicione input event em um campo de texto
+5. Adicione keydown no document para detectar teclas
+
+====================================================
+DICA
+====================================================
+
+Clique (trocar cor):
+  let btn = document.getElementById("meuBotao");
+  let cores = ["red", "blue", "green", "orange", "purple"];
+  let index = 0;
+  btn.addEventListener("click", function() {
+      btn.style.backgroundColor = cores[index];
+      index = (index + 1) % cores.length;
+  });
+
+Mouse sobre:
+  let area = document.getElementById("area");
+  area.addEventListener("mouseenter", function() {
+      area.style.backgroundColor = "lightblue";
+  });
+  area.addEventListener("mouseleave", function() {
+      area.style.backgroundColor = "white";
+  });
+
+Teclado:
+  document.addEventListener("keydown", function(e) {
+      console.log("Tecla: " + e.key);
+      if (e.key === "Enter") {
+          console.log("Enter pressionado!");
+      }
+  });
+
+Input em tempo real:
+  input.addEventListener("input", function() {
+      document.getElementById("preview").innerText = input.value;
+  });

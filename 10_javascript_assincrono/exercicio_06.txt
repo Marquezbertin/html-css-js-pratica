@@ -1,0 +1,74 @@
+EXERCÍCIO 06 — Dashboard com Múltiplas APIs
+Dificuldade: ⭐⭐⭐⭐ Expert
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um dashboard que consome múltiplas APIs simultaneamente
+e exibe diferentes informações em um painel organizado. O
+projeto final do módulo —Combine tudo que aprendeu.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um dashboard com 4 seções:
+- Seção 1: Piada aleatória (API de piadas)
+- Seção 2: Fato aleatório (API de fatos)
+- Seção 3: Post aleatório (JSONPlaceholder)
+- Seção 4: Pokémon aleatório (PokéAPI)
+- Botão "Atualizar Tudo" que recarrega cada seção
+- Loading individual por seção
+- Erros tratados separadamente
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "dashboard_api.html" com estrutura HTML5 completa
+2. Use Promise.all ou fetch independente para cada seção
+3. Crie função de loading por seção (independente)
+4. Trate erro de cada API separadamente
+5. Botão "Atualizar Tudo" que recarrega cada seção
+
+====================================================
+DICA
+====================================================
+
+Carregar todas as APIs:
+  async function carregarTudo() {
+      await Promise.all([
+          carregarPiada(),
+          carregarFato(),
+          carregarPost(),
+          carregarPokemon()
+      ]);
+  }
+
+Carregar individualmente com tratamento:
+  async function carregarPiada() {
+      try {
+          mostrarLoadingSecao("piada", true);
+          let response = await fetch(
+              "https://official-joke-api.appspot.com/random_joke"
+          );
+          let piada = await response.json();
+          document.getElementById("piada-conteudo").innerHTML =
+              '<p><strong>' + piada.setup + '</strong></p>' +
+              '<p>' + piada.punchline + '</p>';
+      } catch (erro) {
+          document.getElementById("piada-conteudo").innerText =
+              "Erro ao carregar piada";
+      } finally {
+          mostrarLoadingSecao("piada", false);
+      }
+  }
+
+Promise.all para carregar tudo de uma vez:
+  async function carregarPokemonAleatorio() {
+      let id = Math.floor(Math.random() * 150) + 1;
+      let response = await fetch("https://pokeapi.co/api/v2/pokemon/" + id);
+      let pokemon = await response.json();
+      // Exibir pokemon.name, pokemon.sprites.front_default, etc.
+  }

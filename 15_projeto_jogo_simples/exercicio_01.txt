@@ -1,0 +1,76 @@
+EXERCÍCIO 01 — Estrutura Canvas + Game Loop
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie a estrutura básica do jogo Pong com o elemento Canvas,
+o game loop e a renderização inicial da tela.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Tela do jogo com:
+- Canvas preto ocupa a maior parte da tela
+- Título do jogo no topo
+- Linha pontilhada central vertical
+- Dois retângulos (raquetes) em cada lado
+- Game loop rodando (pode ver no console)
+- Instruções de controle na parte inferior
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "index.html" e "styles.css" com tema de jogo
+2. Adicione elemento <canvas> centralizado
+3. Inicialize o contexto 2D do canvas
+4. Crie game loop com requestAnimationFrame
+5. Desenhe raquetes e linha central no canvas
+
+====================================================
+DICA
+====================================================
+
+Estrutura do canvas:
+  <canvas id="gameCanvas" width="800" height="500"></canvas>
+
+Contexto:
+  let canvas = document.getElementById("gameCanvas");
+  let ctx = canvas.getContext("2d");
+
+Linha central pontilhada:
+  function desenharLinhaCentral() {
+      ctx.setLineDash([10, 10]);
+      ctx.strokeStyle = "#444";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(canvas.width / 2, 0);
+      ctx.lineTo(canvas.width / 2, canvas.height);
+      ctx.stroke();
+      ctx.setLineDash([]);
+  }
+
+Raquetes:
+  let raqueteEsquerda = { x: 10, y: 200, largura: 10, altura: 100 };
+  let raqueteDireita = { x: 780, y: 200, largura: 10, altura: 100 };
+
+  function desenharRaquete(raquete) {
+      ctx.fillStyle = "white";
+      ctx.fillRect(raquete.x, raquete.y, raquete.largura, raquete.altura);
+  }
+
+Game loop:
+  function gameLoop() {
+      ctx.fillStyle = "#111";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      desenharLinhaCentral();
+      desenharRaquete(raqueteEsquerda);
+      desenharRaquete(raqueteDireita);
+
+      requestAnimationFrame(gameLoop);
+  }
+  gameLoop();

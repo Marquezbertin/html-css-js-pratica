@@ -1,0 +1,67 @@
+EXERCÍCIO 03 — Consumir API de Usuários
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um diretório de contatos que busca dados reais de uma
+API. O usuário pode ver os detalhes de cada pessoa clicando
+em um card.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um diretório com:
+- Grid de cards com foto, nome e e-mail de cada usuário
+- Dados buscados de https://jsonplaceholder.typicode.com/users
+- Barra de busca por nome
+- Ao clicar em um card, abre modal com detalhes
+- Modal mostra: nome, e-mail, telefone, empresa, endereço
+- Loading e tratamento de erro
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "contatos.html" com estrutura HTML5 completa
+2. Use async/await para buscar usuários da API
+3. Crie cards com dados principais (nome, email, avatar)
+4. Implemente modal que abre ao clicar no card
+5. Adicione filtro por nome
+
+====================================================
+DICA
+====================================================
+
+Async/await:
+  async function carregarUsuarios() {
+      try {
+          mostrarLoading(true);
+          let response = await fetch("https://jsonplaceholder.typicode.com/users");
+          let usuarios = await response.json();
+          exibirUsuarios(usuarios);
+      } catch (erro) {
+          mostrarErro("Erro ao carregar contatos");
+      } finally {
+          mostrarLoading(false);
+      }
+  }
+
+Avatar com iniciais (sem API de fotos):
+  function gerarAvatar(nome) {
+      let iniciais = nome.split(" ").map(n => n[0]).join("").toUpperCase();
+      return '<div class="avatar">' + iniciais + '</div>';
+  }
+
+Modal simples:
+  function abrirModal(usuario) {
+      document.getElementById("modal-nome").innerText = usuario.name;
+      document.getElementById("modal-email").innerText = usuario.email;
+      document.getElementById("modal-telefone").innerText = usuario.phone;
+      document.getElementById("modal-empresa").innerText = usuario.company.name;
+      document.getElementById("modal-endereco").innerText =
+          usuario.address.city + ", " + usuario.address.street;
+      document.getElementById("modal").style.display = "flex";
+  }

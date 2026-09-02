@@ -1,0 +1,60 @@
+EXERCÍCIO 03 — Tabela de Notas Escolares
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma tabela mostrando as notas de um aluno ao longo do semestre.
+A tabela deve ter disciplinas, notas bimestrais e situação final.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Título "Boletim Escolar"
+- Subtítulo com nome do aluno
+- Uma tabela com 4 colunas: Disciplina, Bimestre 1, Bimestre 2, Média
+- 5 linhas de dados (Português, Matemática, História, Ciências, Inglês)
+- Uma coluna extra "Situação" com Aprovado/Reprovado
+- Pelo menos 3 disciplinas com média ≥ 7.0 (aprovado)
+- Pelo menos 1 com média < 5.0 (reprovado)
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie o arquivo "boletim.html" com estrutura HTML5
+2. Use <table>, <thead>, <tbody>, <tr>, <th> e <td>
+3. Crie o cabeçalho da tabela com <th> para cada coluna
+4. Preencha 5 linhas de dados com <td>
+5. Calcule e inclua a média de cada disciplina
+
+====================================================
+DICA
+====================================================
+
+Estrutura da tabela:
+  <table>
+      <thead>
+          <tr>
+              <th>Disciplina</th>
+              <th>Bimestre 1</th>
+              <th>Bimestre 2</th>
+              <th>Média</th>
+              <th>Situação</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Matemática</td>
+              <td>8.0</td>
+              <td>7.5</td>
+              <td>7.75</td>
+              <td>Aprovado</td>
+          </tr>
+      </tbody>
+  </table>
+
+A média é calculada: (nota1 + nota2) / 2

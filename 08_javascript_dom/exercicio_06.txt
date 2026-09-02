@@ -1,0 +1,78 @@
+EXERCÍCIO 06 — Lista de Tarefas com DOM Completa
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um gerenciador de tarefas completo usando DOM manipulation.
+O usuário deve poder adicionar, editar, marcar como concluída,
+remover e filtrar tarefas.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um gerenciador de tarefas com:
+- Input + botão para adicionar tarefa
+- Lista de tarefas com checkbox, texto e botão remover
+- Duplo clique para editar tarefa inline
+- Filtros: Todas, Ativas, Concluídas
+- Contador de tarefas ativas
+- Botão "Limpar concluídas"
+- Estilo visual: concluídas com riscado e opacidade
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "tarefas_dom.html" com estrutura HTML5 completa
+2. Crie array de objetos {texto, concluida, id}
+3. Função renderizar() que recria a lista no DOM
+4. Implemente adicionar, toggle, remover e editar
+5. Implemente filtros e contador
+
+====================================================
+DICA
+====================================================
+
+Estrutura de dados:
+  let tarefas = [
+      { id: 1, texto: "Estudar HTML", concluida: false },
+      { id: 2, texto: "Praticar CSS", concluida: true }
+  ];
+  let proximoId = 3;
+
+Função renderizar:
+  function renderizar(filtro = "todas") {
+      let html = "";
+      for (let t of tarefas) {
+          if (filtro === "ativas" && t.concluida) continue;
+          if (filtro === "concluidas" && !t.concluida) continue;
+          let classe = t.concluida ? "tarefa concluida" : "tarefa";
+          html += '<div class="' + classe + '">';
+          html += '<input type="checkbox" ' + (t.concluida ? "checked" : "") +
+                  ' onchange="toggle(' + t.id + ')">';
+          html += '<span ondblclick="editar(' + t.id + ')">' + t.texto + '</span>';
+          html += '<button onclick="remover(' + t.id + ')">X</button>';
+          html += '</div>';
+      }
+      document.getElementById("lista").innerHTML = html;
+      atualizarContador();
+  }
+
+Editar inline:
+  function editar(id) {
+      let tarefa = tarefas.find(t => t.id === id);
+      let novoTexto = prompt("Editar tarefa:", tarefa.texto);
+      if (novoTexto !== null && novoTexto.trim() !== "") {
+          tarefa.texto = novoTexto.trim();
+          renderizar();
+      }
+  }
+
+Contador:
+  function atualizarContador() {
+      let ativas = tarefas.filter(t => !t.concluida).length;
+      document.getElementById("contador").innerText = ativas + " tarefas ativas";
+  }

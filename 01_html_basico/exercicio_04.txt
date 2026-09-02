@@ -1,0 +1,43 @@
+EXERCÍCIO 04 — Imagens e Atributos
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Você quer criar uma galeria simples mostrando seus jogos ou séries
+favoritas. Cada item deve ter uma imagem (pode ser da internet) com
+uma descrição.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Título "Minha Galeria de Favoritos"
+- 4 imagens dispostas uma abaixo da outra
+- Cada imagem com um texto descritivo abaixo
+- Imagens de tamanhos diferentes
+- Pelo menos uma imagem com erro (mostrar texto alternativo)
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie o arquivo "galeria.html" com estrutura HTML5 completa
+2. Adicione 4 imagens usando <img> com URLs de imagens públicas
+3. Adicione o atributo alt em todas as imagens
+4. Defina o atributo width em pelo menos 2 imagens para tamanhos diferentes
+5. Adicione um parágrafo <p> abaixo de cada imagem com o nome do item
+
+====================================================
+DICA
+====================================================
+
+Para imagens gratuitas, use o site https://picsum.photos
+Exemplo de imagem:
+  <img src="https://picsum.photos/300/200" alt="Imagem aleatória" width="300">
+  <p>Nome do jogo ou série</p>
+
+Para testar o alt, tente colocar um link quebrado intencionalmente:
+  <img src="imagem_que_nao_existe.jpg" alt="Texto que aparece quando a imagem falha">

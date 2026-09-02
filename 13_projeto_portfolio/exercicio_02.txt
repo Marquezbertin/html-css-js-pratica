@@ -1,0 +1,70 @@
+EXERCÍCIO 02 — Seção Sobre + Habilidades
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie a seção "Sobre Mim" com sua história e uma seção de
+habilidades com barras de progresso mostrando seu nível
+em cada tecnologia.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Seção Sobre:
+- Título "Sobre Mim"
+- Parágrafo com sua história/bio
+- 2-3 fatos curiosos sobre você
+- Layout de 2 colunas
+
+Seção Habilidades:
+- Título "Minhas Habilidades"
+- Barras de progresso para: HTML, CSS, JavaScript, React
+- Cada barra com nome, porcentagem e cor
+- Animação de preenchimento ao rolar
+
+====================================================
+TAREFAS
+====================================================
+
+1. Adicione seção "Sobre" ao index.html
+2. Adicione seção "Habilidades" com barras de progresso
+3. Crie barras com div interna e width em porcentagem
+4. Animate as barras com JavaScript ao scroll
+5. Adicione contadores numéricos ao lado das barras
+
+====================================================
+DICA
+====================================================
+
+Barra de progresso HTML/CSS:
+  .barra-habilidade {
+      background: var(--dark);
+      border-radius: 10px;
+      height: 12px;
+      margin: 10px 0;
+      overflow: hidden;
+  }
+  .barra-preenchimento {
+      height: 100%;
+      border-radius: 10px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      width: 0%; /* Animado com JS */
+      transition: width 1s ease;
+  }
+
+Animação ao scroll:
+  function animarBarras() {
+      document.querySelectorAll(".barra-preenchimento").forEach(barra => {
+          let rect = barra.getBoundingClientRect();
+          if (rect.top < window.innerHeight) {
+              barra.style.width = barra.dataset.porcentagem;
+          }
+      });
+  }
+  window.addEventListener("scroll", animarBarras);
+
+No HTML:
+  <div class="barra-preenchimento" data-porcentagem="85%"></div>

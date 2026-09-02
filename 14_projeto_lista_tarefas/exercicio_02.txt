@@ -1,0 +1,78 @@
+EXERCÍCIO 02 — Adicionar Tarefas
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Implemente a funcionalidade de adicionar novas tarefas ao
+clicar no botão ou pressionar Enter.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Funcionalidade:
+- Digitar no input e pressionar Enter adiciona tarefa
+- Clicar no botão "+" também adiciona
+- Tarefa vazia não é adicionada
+- Input limpa após adicionar
+- Nova tarefa aparece no final da lista
+- Cada tarefa tem ID único
+- Contador de tarefas atualiza
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "app.js" e vincule ao HTML
+2. Crie array vazio para armazenar tarefas
+3. Implemente função adicionarTarefa()
+4. Adicione evento de tecla Enter no input
+5. Implemente função renderizar() para exibir na tela
+
+====================================================
+DICA
+====================================================
+
+Variáveis e função principal:
+  let tarefas = [];
+  let proximoId = 1;
+
+  function adicionarTarefa() {
+      let input = document.getElementById("inputTarefa");
+      let texto = input.value.trim();
+      if (texto === "") return;
+
+      tarefas.push({
+          id: proximoId++,
+          texto: texto,
+          concluida: false
+      });
+
+      input.value = "";
+      renderizar();
+  }
+
+Eventos:
+  document.getElementById("btnAdicionar")
+      .addEventListener("click", adicionarTarefa);
+
+  document.getElementById("inputTarefa")
+      .addEventListener("keypress", function(e) {
+          if (e.key === "Enter") adicionarTarefa();
+      });
+
+Função renderizar:
+  function renderizar() {
+      let html = "";
+      for (let t of tarefas) {
+          html += '<li class="tarefa">';
+          html += '<input type="checkbox" onchange="toggle(' + t.id + ')">';
+          html += '<span>' + t.texto + '</span>';
+          html += '<button onclick="remover(' + t.id + ')">×</button>';
+          html += '</li>';
+      }
+      document.getElementById("lista").innerHTML = html;
+      atualizarContador();
+  }

@@ -1,0 +1,64 @@
+EXERCÍCIO 04 — Drag and Drop
+Dificuldade: ⭐⭐⭐ Difícil
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie um quadro Kanban (estilo Trello) onde o usuário pode arrastar
+tarefas entre colunas: "A Fazer", "Fazendo" e "Concluído".
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Um quadro com 3 colunas:
+- Cada coluna com título e área de drop
+- Tarefas são cards arrastáveis
+- Cards podem ser movidos entre colunas
+- Efeito visual quando arrasta sobre uma coluna
+- Botão para adicionar novas tarefas
+- Contador de tarefas em cada coluna
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "kanban.html" com estrutura HTML5 completa
+2. Crie 3 colunas com dragover, dragenter e drop events
+3. Torn os cards draggable com draggable="true"
+4. Implemente dragstart para armazenar dados da tarefa
+5. Implemente drop para mover o card
+
+====================================================
+DICA
+====================================================
+
+Tornar elemento arrastável:
+  <div class="tarefa" draggable="true" data-id="1">
+      Estudar JavaScript
+  </div>
+
+Eventos de drag:
+  tarefa.addEventListener("dragstart", function(e) {
+      e.dataTransfer.setData("text/plain", tarefa.dataset.id);
+      tarefa.classList.add("arrastando");
+  });
+
+  coluna.addEventListener("dragover", function(e) {
+      e.preventDefault(); // Necessário para permitir drop
+      coluna.classList.add("hover");
+  });
+
+  coluna.addEventListener("drop", function(e) {
+      e.preventDefault();
+      let id = e.dataTransfer.getData("text/plain");
+      let tarefa = document.querySelector('[data-id="' + id + '"]');
+      coluna.appendChild(tarefa);
+      coluna.classList.remove("hover");
+      atualizarContadores();
+  });
+
+CSS para feedback visual:
+  .arrastando { opacity: 0.5; }
+  .coluna.hover { background: #e3f2fd; border: 2px dashed #2196f3; }

@@ -1,0 +1,44 @@
+EXERCÍCIO 03 — Links e Navegação
+Dificuldade: ⭐ Fácil
+
+====================================================
+PROBLEMA
+====================================================
+
+Você quer criar uma página com seus sites favoritos, funcionando como
+uma espécie de "página de links" pessoal (estilo antigo da internet!).
+Cada link deve ser clicável e alguns devem abrir em nova aba.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com:
+- Título "Meus Sites Favoritos"
+- Uma seção "Redes Sociais" com 3 links (Instagram, TikTok, YouTube)
+- Uma seção "Aprender" com 3 links (W3Schools, MDN, FreeCodeCamp)
+- Uma seção "Entretenimento" com 3 links (Spotify, Netflix, Steam)
+- Links das redes sociais abrem em nova aba
+- Um parágrafo no rodapé dizendo "Página criada por [seu nome]"
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie o arquivo "links.html" com estrutura HTML5 completa
+2. Adicione o título da página com <h1>
+3. Para cada seção, use <h2> como subtítulo
+4. Crie os links usando <a href="URL">Texto</a>
+5. Adicione target="_blank" nos links das redes sociais
+
+====================================================
+DICA
+====================================================
+
+A estrutura de cada seção fica assim:
+  <h2>Redes Sociais</h2>
+  <a href="https://www.instagram.com" target="_blank">Instagram</a>
+  <br>
+  <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+
+Use <br> para colocar cada link em uma linha separada.

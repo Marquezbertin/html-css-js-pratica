@@ -1,0 +1,63 @@
+EXERCÍCIO 02 — Hover Effects em Cards
+Dificuldade: ⭐⭐ Médio
+
+====================================================
+PROBLEMA
+====================================================
+
+Crie uma página com 3 cards de produto (jogos, por exemplo) que
+tenham efeitos de hover incríveis: elevação, rotação da imagem
+e aparecimento de detalhes.
+
+====================================================
+RESULTADO ESPERADO
+====================================================
+
+Uma página com fundo escuro e 3 cards:
+- Card: eleva (sobe) quando passa o mouse
+- Card: a imagem rotaciona 360° suavemente
+- Card: texto "Comprar" aparece de baixo para cima
+- Sombras maiores no hover
+- Transições suaves em todos os efeitos
+
+====================================================
+TAREFAS
+====================================================
+
+1. Crie "hover_cards.html" com estrutura HTML5
+2. Crie 3 cards com imagem, título e preço
+3. Adicione efeito de elevação (translateY) no hover
+4. Adicione efeito de rotação na imagem no hover
+5. Adicione efeito slide-up em um botão que aparece no hover
+
+====================================================
+DICA
+====================================================
+
+Efeito de elevação:
+  .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+  }
+
+Efeito de rotação na imagem:
+  .card img {
+      transition: transform 0.5s ease;
+  }
+  .card:hover img {
+      transform: rotate(360deg);
+  }
+
+Efeito slide-up (botão escondido):
+  .botao {
+      transform: translateY(100%);
+      opacity: 0;
+      transition: all 0.3s ease;
+  }
+  .card:hover .botao {
+      transform: translateY(0);
+      opacity: 1;
+  }
